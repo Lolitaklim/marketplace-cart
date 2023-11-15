@@ -6,6 +6,7 @@
     <title>ТОВАРЫ И ТОЧКА</title>
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/style.css">
+    <script src="item.js"></script>
     <script src="main.js"></script>
 </head>
 <body>
@@ -43,16 +44,94 @@
             <div class="basket">
                 <h1 class="basket__header bold">Корзина</h1>
                 <div class="accordion">
-                    <button class="checkbox"></button>
-                    <span class="accordion__header regular">Выбрать все</span>
-                    <button class="accordion__btn"></button>
+                    <div class="accordion__choose">
+                        <input class="checkbox-label checkbox-label-choose" id="checkbox-choose" type="checkbox">
+                        <label class="label-checkbox accordion__header regular" for="checkbox-choose">Выбрать все</label>
+                    </div>
+                    <span class="accordion__header-hide accordion__header-hide_hidden semi-bold">266 товаров · 2 100 569 сом</span>
+                    <div class="accordion__hide-btn"><button class="hide-btn hide-btn-instock"></button></div>
                 </div>
-                <div class="basket__list">
-                    <div class="list-item">
+                <div class="basket__list basket__list-instock basket__list_overflow">
+                    <template id="list-item-template">  
+                    <div class="list-item list-item-instock" data-item="true">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
                                 <div class="goods-img__checkbox">
-                                    <button class="checkbox checkbox-mob"></button>
+                                    <input class="checkbox-label" id="item-1" type="checkbox">
+                                    <label class="label-checkbox checkbox-mob" for="item-1"></label>
+                                </div>
+                                <img class="content-img" src=" " alt="">
+                            </div>
+                            <div class="list-item__goods-info">
+                                <div class="list-item__price_mobile">
+                                    <div class="list-item__price-new">
+                                        <span class="price-new__digit bold"></span>
+                                        <span class="price-new__valute bold">сом</span>
+                                    </div>
+                                    <span class="list-item__price-sale regular gray"><span class="price-sale-count"></span> сом</span>
+                                </div>
+                                <span class="goods-info__title regular"></span>
+                                <div class="goods-info__properties regular">
+                                    <span class="color"></span>
+                                    <span class="good-size"></span>
+                                </div>
+                                <div class="comstore regular gray">
+                                    <span class="storage"></span>
+                                    <div class="comstore__company">
+                                        <span class="comstore__company-name"></span>
+                                        <span class="icon-i">
+                                            <div class="tooltip tooltip-i regular">
+                                                <span class="tooltip-name bold"></span>
+                                                <span class="ogrn" ></span>
+                                                <span class="addr"></span>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="list-item__right">
+                            <div class="list-item__remainder">
+                                <div class="counter regular" >
+                                    <span class="counter__sign counter__sign_minus">−</span>
+                                    <span class="counter__count"><input class="counter__input" type="text" value="" ></span>
+                                    <span class="counter__sign counter__sign_plus">+</span>
+                                </div>
+                                <span class="count-cood"></span>
+                                <span class="remainder-alert remainder-alert_hidden regular"></span>
+                                <div class="remainder__icons">
+                                    <button class="hearth"></button>
+                                    <button class="delete"></button>
+                                </div>
+                            </div>
+                            <div class="list-item__price">
+                                <div class="list-item__price-new">
+                                    <span class="price-new__digit bold"></span>
+                                    <span class="price-new__valute bold">сом</span>
+                                </div>
+                                <span class="list-item__price-sale regular gray">
+                                    <span class="price-sale-count"></span> сом 
+                                    <div class="tooltip tooltip-sale regular">
+                                        <div class="tooltip-sale__header">
+                                            <span>Скидка 55%</span>
+                                            <span>Скидка покупателя 10%</span>
+                                        </div>
+                                        <div class="tooltip-sale__cont">
+                                            <span>−300 сом</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    </template>
+                    <!-- <div class="list-item" data-item="true">
+                        <div class="list-item__goods">
+                            <div class="list-item__goods-img">
+                                <div class="goods-img__checkbox">
+                                    <input class="checkbox-label" id="item-1" type="checkbox">
+                                    <label class="label-checkbox checkbox-mob" for="item-1"></label>
                                 </div>
                                 <img class="content-img" src="/img/content/Frame 3853.png" alt="">
                             </div>
@@ -86,12 +165,13 @@
                         </div>
                         <div class="list-item__right">
                             <div class="list-item__remainder">
-                                <div class="counter regular">
-                                    <span class="counter__sign counter__sign_disabled ">−</span>
-                                    <span class="counter__count">1</span>
-                                    <span class="counter__sign ">+</span>
+                                <div class="counter regular" >
+                                    <span class="counter__sign counter__sign_minus">−</span>
+                                    <span class="counter__count"><input class="counter__input" type="text" value="1" ></span>
+                                    <span class="counter__sign counter__sign_plus">+</span>
                                 </div>
-                                <span class="remainder-alert regular">Осталось 2 шт.</span>
+                                <span class="count-cood">3</span>
+                                <span class="remainder-alert remainder-alert_hidden regular"></span>
                                 <div class="remainder__icons">
                                     <button class="hearth"></button>
                                     <button class="delete"></button>
@@ -102,15 +182,27 @@
                                     <span class="price-new__digit bold">522</span>
                                     <span class="price-new__valute bold">сом</span>
                                 </div>
-                                <span class="list-item__price-sale regular gray">1051 сом</span>
+                                <span class="list-item__price-sale regular gray">1051 сом
+                                    <div class="tooltip tooltip-sale regular">
+                                        <div class="tooltip-sale__header">
+                                            <span>Скидка 55%</span>
+                                            <span>Скидка покупателя 10%</span>
+                                        </div>
+                                        <div class="tooltip-sale__cont">
+                                            <span>−300 сом</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="list-item">
+                    <div class="list-item" data-item="true">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
                                 <div class="goods-img__checkbox">
-                                    <button class="checkbox checkbox-mob"></button>
+                                    <input class="checkbox-label" id="item-2" type="checkbox">
+                                    <label class="label-checkbox checkbox-mob" for="item-2"></label>
                                 </div>
                                 <img class="content-img" src="/img/content/Frame 277132129 (1).png" alt="">
                             </div>
@@ -120,18 +212,7 @@
                                         <span class="price-new__digit bold">2 100 047</span>
                                         <span class="price-new__valute bold">сом</span>
                                     </div>
-                                    <div class="list-item__price-sale regular gray">2 300 047 сом
-                                        <div class="tooltip tooltip-sale regular">
-                                            <div class="tooltip-sale__header">
-                                                <span>Скидка 55%</span>
-                                                <span>Скидка покупателя 10%</span>
-                                            </div>
-                                            <div class="tooltip-sale__cont">
-                                                <span class="bold">−300 сом</span>
-                                                <span>−30 сом</span>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    <div class="list-item__price-sale regular gray">2 300 047 сом</div>
                                 </div>
                                 <span class="goods-info__title regular">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
                                 <div class="goods-info__properties regular">
@@ -155,12 +236,13 @@
                         </div>
                         <div class="list-item__right">
                             <div class="list-item__remainder">
-                                <div class="counter regular">
-                                    <span class="counter__sign counter__sign_disabled">−</span>
-                                    <span class="counter__count">200</span>
-                                    <span class="counter__sign">+</span>
+                                <div class="counter regular" >
+                                    <span class="counter__sign counter__sign_minus">−</span>
+                                    <span class="counter__count"><input class="counter__input" type="text" value="200" ></span>
+                                    <span class="counter__sign counter__sign_plus">+</span>
                                 </div>
-                                <span class="remainder-alert regular"></span>
+                                <span class="count-cood">203</span>
+                                <span class="remainder-alert remainder-alert_hidden regular"></span>
                                 <div class="remainder__icons">
                                     <button class="hearth"></button>
                                     <button class="delete"></button>
@@ -171,15 +253,27 @@
                                     <span class="price-new__digit price-new__digit_mini bold">2 100 047</span>
                                     <span class="price-new__valute bold">сом</span>
                                 </div>
-                                <span class="list-item__price-sale regular gray">2 300 047 сом</span>
+                                <span class="list-item__price-sale regular gray">2 300 047 сом
+                                    <div class="tooltip tooltip-sale regular">
+                                        <div class="tooltip-sale__header">
+                                            <span>Скидка 55%</span>
+                                            <span>Скидка покупателя 10%</span>
+                                        </div>
+                                        <div class="tooltip-sale__cont">
+                                            <span>−300 сом</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
                     </div>
-                    <div class="list-item">
+                    <div class="list-item" data-item="true">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
                                 <div class="goods-img__checkbox">
-                                    <button class="checkbox checkbox-mob"></button>
+                                    <input class="checkbox-label" id="item-3" type="checkbox">
+                                    <label class="label-checkbox checkbox-mob" for="item-3"></label>
                                 </div>
                                 <img class="content-img" src="/img/content/Frame 277132129 (1) (копия).png" alt="">
                             </div>
@@ -209,12 +303,13 @@
                         </div>
                         <div class="list-item__right">
                             <div class="list-item__remainder">
-                                <div class="counter regular">
-                                    <span class="counter__sign counter__sign_disabled">−</span>
-                                    <span class="counter__count">2</span>
-                                    <span class="counter__sign">+</span>
+                                <div class="counter regular" >
+                                    <span class="counter__sign counter__sign_minus">−</span>
+                                    <span class="counter__count"><input class="counter__input" type="text" value="2" ></span>
+                                    <span class="counter__sign counter__sign_plus">+</span>
                                 </div>
-                                <span class="remainder-alert regular">Осталось 2 шт.</span>
+                                <span class="count-cood">4</span>
+                                <span class="remainder-alert remainder-alert_hidden regular"></span>
                                 <div class="remainder__icons">
                                     <button class="hearth"></button>
                                     <button class="delete"></button>
@@ -225,22 +320,33 @@
                                     <span class="price-new__digit bold">494</span>
                                     <span class="price-new__valute bold">сом</span>
                                 </div>
-                                <span class="list-item__price-sale regular gray">950 сом</span>
+                                <span class="list-item__price-sale regular gray">950 сом
+                                    <div class="tooltip tooltip-sale regular">
+                                        <div class="tooltip-sale__header">
+                                            <span>Скидка 55%</span>
+                                            <span>Скидка покупателя 10%</span>
+                                        </div>
+                                        <div class="tooltip-sale__cont">
+                                            <span>−300 сом</span>
+                                            <span>−30 сом</span>
+                                        </div>
+                                    </div>
+                                </span>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
-            <div class="basket">
+            <div class="basket basket__soldout">
                 <div class="solduot__header semi-bold">
                     <span>Отсутствуют · 3 товара</span>
-                    <button class="accordion__btn"></button>
+                    <div class="accordion__hide-btn"><button class="hide-btn hide-btn-soldout"></button></div>
                 </div>
-                <div class="basket__list gray">
+                <div class="basket__list basket__list-soldout gray">
                     <div class="list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/Frame 3853.png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/Frame3853.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Футболка UZcotton мужская</span>
@@ -262,7 +368,7 @@
                     <div class="list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/Frame 277132129 (1).png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/277132129.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
@@ -284,7 +390,7 @@
                     <div class="list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/Frame 277132129 (1) (копия).png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/faber.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell</span>
@@ -352,7 +458,11 @@
                     </div>
                     <div class="delivery__return regular">
                         <img src="/img/price-shipping.svg" alt="">
-                        <span>Обратная доставка товаров на склад при отказе — <span class="delivery__return-free">бесплатно</span></span>
+                        <span>Обратная доставка товаров на склад при отказе — <span class="delivery__return-free">бесплатно
+                            <div class="tooltip tooltip-free tooltip-free-delivery regular">
+                                Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                            </div>
+                        </span></span>
                     </div>
                 </div>
                 <div class="placing__item payment">
@@ -435,7 +545,11 @@
                     </div>
                     <div class="sidebar-delivery__return regular">
                         <img src="/img/price-shipping.svg" alt="">
-                        <span>Обратная доставка товаров на склад при отказе — <span class="delivery__return-free sidebar-delivery__return-free">бесплатно</span></span>
+                        <span>Обратная доставка товаров на склад при отказе — <span class="delivery__return-free sidebar-delivery__return-free">бесплатно
+                            <div class="tooltip tooltip-free regular">
+                                Если товары вам не подойдут, мы вернем их обратно на склад — это бесплатно
+                            </div>
+                        </span></span>
                     </div>
                 </div>
                 <div class="sidebar-payment">
@@ -452,10 +566,8 @@
                         </div>
                     </div>
                     <div class="sidebar-payment-bottom regular">
-                        <div class="sidebar-payment-check">
-                            <button class="checkbox"></button>
-                            Списать оплату сразу
-                        </div>
+                        <input class="checkbox-label" id="checkbox-pay" type="checkbox">
+                        <label class="label-checkbox" for="checkbox-pay">Списать оплату сразу</label>
                         Спишем оплату с карты при получении
                     </div>
                 </div>
