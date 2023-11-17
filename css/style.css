@@ -431,6 +431,10 @@ body {
     display: none;
 }
 
+.display-flex {
+    display: flex;
+}
+
 .comstore {
     font-size: 13px;
     line-height: 1.3; 

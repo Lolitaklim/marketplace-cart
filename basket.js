@@ -1,7 +1,12 @@
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    // let totalCost = 0;
+   
+
+    const label1 = document.getElementById('itemone');
+    const label2 = document.getElementById('itemtwo');
+    const label3 = document.getElementById('itemfree');
+    
 
     const costHeader = document.querySelector('.cost-header-number');
     const costHeaderNoSale = document.querySelector('.cost-no-sale');
@@ -79,8 +84,20 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             input.value = value;
 
-            
-
+    
+            // лейблы доделать
+            const idGood = itemGood.querySelector('.checkbox-label');
+            const idGoodNum = idGood.id;
+            if(idGoodNum == 'item1') {
+                label1.textContent = value;
+            }
+            if(idGoodNum == 'item2') {
+                let value2 = value -184;
+                    label2.textContent = value2;
+            }
+            if(idGoodNum == 'item3') {
+                label3.textContent = value;
+            }
 
             // вывод цены товара
             const totalPriceNew = value * initialPrice;
@@ -130,6 +147,13 @@ document.addEventListener('DOMContentLoaded', function () {
             const labelTabbar = document.querySelector('.tabbar__label');
             labelBusket.textContent = amount;
             labelTabbar.textContent = amount;
+
+
+
+            
+
+
+
             
         })
     })
