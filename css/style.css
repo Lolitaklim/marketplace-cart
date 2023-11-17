@@ -376,7 +376,7 @@ body {
     display: flex;
     padding-top: 10px;
     align-items: flex-start;
-    gap: 17px;
+    gap: 16px;
     flex: 1 0 0;   
 }
 
@@ -419,13 +419,12 @@ body {
 
 .goods-info__properties {
     display: flex;
-    /* gap: 17px; */
     font-size: 13px;
-    line-height: 1.23; 
+    line-height: 1.1; 
 }
 
-.color {
-    padding-right: 17px;
+.good-size {
+    padding-left: 17px;
 }
 
 .display-none {
@@ -671,6 +670,7 @@ body {
 .basket__soldout {
     z-index: 1;
     display: flex;
+    position: relative;
 }
 
 .solduot__header {
@@ -678,8 +678,12 @@ body {
     align-items: center;
     justify-content: space-between;
     align-self: stretch;
-    padding-bottom: 4px;
+    padding-bottom: 18px;
     font-size: 16px;
+}
+
+.solduot__list-item:first-child {
+    border-top: 1px solid rgba(0, 0, 0, 0.10);
 }
 
 .goods-info__title_width {
@@ -724,7 +728,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
+    gap: 18px;
     align-self: stretch;
 }
 
@@ -778,7 +782,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 4px;
+    gap: 5px;
 }
 
 .point__addr {
@@ -806,7 +810,7 @@ body {
 .delivery__item-goods {
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: 6px;
 }
 
 .item-goods__good {
@@ -858,7 +862,6 @@ body {
 }
 
 .tooltip-free {
-    /* z-index: 1; */
     left: -193px;
     top: 22px;
     padding: 10px 16px 14px 16px;
@@ -871,10 +874,6 @@ body {
 .tooltip-free-delivery {
     left: -115px;
 }
-
-/* .payment {
-   
-} */
 
 .payment__content {
     display: flex;
@@ -1060,7 +1059,7 @@ body {
     transform: translateY(-3px); 
 }
 
-.point__addr {
+.point__addr-sidebar {
     font-size: 13px;
     line-height: 1.23;
 }
@@ -1165,6 +1164,7 @@ body {
     gap: 8px;
     font-size: 13px;
     line-height: 1.23;
+    padding-right: 2px;
 }
 
 .footer-container {
@@ -1431,25 +1431,41 @@ body {
     
     .basket__header {
         font-size: 20px;
+        padding-bottom: 9px;
     }
     
     .accordion {
         padding-bottom: 5px;
+        border-bottom: none;
+
     }
+
     
     .accordion__hide-btn {
-        padding-right: 17px;
+        padding-right: 4px;
     }
     
     .basket__list {
         border-top: none;
         gap: 15px;
     }
+
+    .solduot__list-item:first-child {
+        border-top:none; 
+    }
+
+    
     
     .list-item {
         flex-direction: column;
         border-top: 1px solid rgba(0, 0, 0, 0.10);
+        padding-bottom: 0px;
     }
+
+    .list-item:first-child {
+        border-top:none; 
+    }
+    
     
     .list-item__goods {
         padding-top: 12px;
@@ -1492,7 +1508,7 @@ body {
     }
     
     .price-new__digit {
-        font-size: 16px;
+        font-size: 18px;
         letter-spacing: 0;
     }
     
