@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="/css/style.css">
     <script src="item.js"></script>
     <script src="main.js"></script>
+    <script src="basket.js"></script>
+    <script src="valid.js"></script>
 </head>
 <body>
     <header class="header">
@@ -45,7 +47,7 @@
                 <h1 class="basket__header bold">Корзина</h1>
                 <div class="accordion">
                     <div class="accordion__choose">
-                        <input class="checkbox-label checkbox-label-choose" id="checkbox-choose" type="checkbox">
+                        <input class="checkbox-label checkbox-label-choose" id="checkbox-choose" type="checkbox" checked>
                         <label class="label-checkbox accordion__header regular" for="checkbox-choose">Выбрать все</label>
                     </div>
                     <span class="accordion__header-hide accordion__header-hide_hidden semi-bold">266 товаров · 2 100 569 сом</span>
@@ -57,8 +59,8 @@
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
                                 <div class="goods-img__checkbox">
-                                    <input class="checkbox-label" id="item-1" type="checkbox">
-                                    <label class="label-checkbox checkbox-mob" for="item-1"></label>
+                                    <input class="checkbox-label checkbox-item" id="" type="checkbox" name="goods" checked>
+                                    <label class="label-checkbox checkbox-mob" for=""></label>
                                 </div>
                                 <img class="content-img" src=" " alt="">
                             </div>
@@ -126,215 +128,6 @@
                         </div>
                     </div>
                     </template>
-                    <!-- <div class="list-item" data-item="true">
-                        <div class="list-item__goods">
-                            <div class="list-item__goods-img">
-                                <div class="goods-img__checkbox">
-                                    <input class="checkbox-label" id="item-1" type="checkbox">
-                                    <label class="label-checkbox checkbox-mob" for="item-1"></label>
-                                </div>
-                                <img class="content-img" src="/img/content/Frame 3853.png" alt="">
-                            </div>
-                            <div class="list-item__goods-info">
-                                <div class="list-item__price_mobile">
-                                    <div class="list-item__price-new">
-                                        <span class="price-new__digit bold">522</span>
-                                        <span class="price-new__valute bold">сом</span>
-                                    </div>
-                                    <span class="list-item__price-sale regular gray">1051 сом</span>
-                                </div>
-                                <span class="goods-info__title regular">Футболка UZcotton мужская</span>
-                                <div class="goods-info__properties regular">
-                                    <span>Цвет: белый</span>
-                                    <span class="good-size">Размер: 56</span>
-                                </div>
-                                <div class="comstore regular gray">
-                                    <span>Коледино WB</span>
-                                    <div class="comstore__company">
-                                        OOO Вайлдберриз
-                                        <span class="icon-i">
-                                            <div class="tooltip tooltip-i regular">
-                                                <span class="bold">OOO "ВАЙЛДБЕРРИЗ"</span>
-                                                <span>ОГРН: 1067746062449</span>
-                                                <span>142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item__right">
-                            <div class="list-item__remainder">
-                                <div class="counter regular" >
-                                    <span class="counter__sign counter__sign_minus">−</span>
-                                    <span class="counter__count"><input class="counter__input" type="text" value="1" ></span>
-                                    <span class="counter__sign counter__sign_plus">+</span>
-                                </div>
-                                <span class="count-cood">3</span>
-                                <span class="remainder-alert remainder-alert_hidden regular"></span>
-                                <div class="remainder__icons">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
-                                </div>
-                            </div>
-                            <div class="list-item__price">
-                                <div class="list-item__price-new">
-                                    <span class="price-new__digit bold">522</span>
-                                    <span class="price-new__valute bold">сом</span>
-                                </div>
-                                <span class="list-item__price-sale regular gray">1051 сом
-                                    <div class="tooltip tooltip-sale regular">
-                                        <div class="tooltip-sale__header">
-                                            <span>Скидка 55%</span>
-                                            <span>Скидка покупателя 10%</span>
-                                        </div>
-                                        <div class="tooltip-sale__cont">
-                                            <span>−300 сом</span>
-                                            <span>−30 сом</span>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-item" data-item="true">
-                        <div class="list-item__goods">
-                            <div class="list-item__goods-img">
-                                <div class="goods-img__checkbox">
-                                    <input class="checkbox-label" id="item-2" type="checkbox">
-                                    <label class="label-checkbox checkbox-mob" for="item-2"></label>
-                                </div>
-                                <img class="content-img" src="/img/content/Frame 277132129 (1).png" alt="">
-                            </div>
-                            <div class="list-item__goods-info">
-                                <div class="list-item__price_mobile">
-                                    <div class="list-item__price-new">
-                                        <span class="price-new__digit bold">2 100 047</span>
-                                        <span class="price-new__valute bold">сом</span>
-                                    </div>
-                                    <div class="list-item__price-sale regular gray">2 300 047 сом</div>
-                                </div>
-                                <span class="goods-info__title regular">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
-                                <div class="goods-info__properties regular">
-                                    <span>Цвет: прозрачный</span>
-                                    <span class="good-size"></span>
-                                </div>
-                                <div class="comstore regular gray">
-                                    <span>Коледино WB</span>
-                                    <div class="comstore__company">
-                                        OOO Мегапрофстиль
-                                        <span class="icon-i">
-                                            <div class="tooltip tooltip-i regular">
-                                                <span class="bold">OOO «МЕГАПРОФСТИЛЬ»</span>
-                                                <span>ОГРН: 5167746237148</span>
-                                                <span>129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item__right">
-                            <div class="list-item__remainder">
-                                <div class="counter regular" >
-                                    <span class="counter__sign counter__sign_minus">−</span>
-                                    <span class="counter__count"><input class="counter__input" type="text" value="200" ></span>
-                                    <span class="counter__sign counter__sign_plus">+</span>
-                                </div>
-                                <span class="count-cood">203</span>
-                                <span class="remainder-alert remainder-alert_hidden regular"></span>
-                                <div class="remainder__icons">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
-                                </div>
-                            </div>
-                            <div class="list-item__price">
-                                <div class="list-item__price-new">
-                                    <span class="price-new__digit price-new__digit_mini bold">2 100 047</span>
-                                    <span class="price-new__valute bold">сом</span>
-                                </div>
-                                <span class="list-item__price-sale regular gray">2 300 047 сом
-                                    <div class="tooltip tooltip-sale regular">
-                                        <div class="tooltip-sale__header">
-                                            <span>Скидка 55%</span>
-                                            <span>Скидка покупателя 10%</span>
-                                        </div>
-                                        <div class="tooltip-sale__cont">
-                                            <span>−300 сом</span>
-                                            <span>−30 сом</span>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-item" data-item="true">
-                        <div class="list-item__goods">
-                            <div class="list-item__goods-img">
-                                <div class="goods-img__checkbox">
-                                    <input class="checkbox-label" id="item-3" type="checkbox">
-                                    <label class="label-checkbox checkbox-mob" for="item-3"></label>
-                                </div>
-                                <img class="content-img" src="/img/content/Frame 277132129 (1) (копия).png" alt="">
-                            </div>
-                            <div class="list-item__goods-info">
-                                <div class="list-item__price_mobile">
-                                    <div class="list-item__price-new">
-                                        <span class="price-new__digit bold">494</span>
-                                        <span class="price-new__valute bold">сом</span>
-                                    </div>
-                                    <span class="list-item__price-sale regular gray">950 сом</span>
-                                </div>
-                                <span class="goods-info__title regular">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell</span>
-                                <div class="comstore regular gray">
-                                    <span>Коледино WB</span>
-                                    <div class="comstore__company">
-                                        OOO Вайлдберриз
-                                        <span class="icon-i">
-                                            <div class="tooltip tooltip-i regular">
-                                                <span class="bold">OOO "ВАЙЛДБЕРРИЗ"</span>
-                                                <span>ОГРН: 1067746062449</span>
-                                                <span>142181, Московская область, д Коледино, тер. Индустриальный Парк Коледино, д. 6 стр. 1</span>
-                                            </div>
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="list-item__right">
-                            <div class="list-item__remainder">
-                                <div class="counter regular" >
-                                    <span class="counter__sign counter__sign_minus">−</span>
-                                    <span class="counter__count"><input class="counter__input" type="text" value="2" ></span>
-                                    <span class="counter__sign counter__sign_plus">+</span>
-                                </div>
-                                <span class="count-cood">4</span>
-                                <span class="remainder-alert remainder-alert_hidden regular"></span>
-                                <div class="remainder__icons">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
-                                </div>
-                            </div>
-                            <div class="list-item__price">
-                                <div class="list-item__price-new">
-                                    <span class="price-new__digit bold">494</span>
-                                    <span class="price-new__valute bold">сом</span>
-                                </div>
-                                <span class="list-item__price-sale regular gray">950 сом
-                                    <div class="tooltip tooltip-sale regular">
-                                        <div class="tooltip-sale__header">
-                                            <span>Скидка 55%</span>
-                                            <span>Скидка покупателя 10%</span>
-                                        </div>
-                                        <div class="tooltip-sale__cont">
-                                            <span>−300 сом</span>
-                                            <span>−30 сом</span>
-                                        </div>
-                                    </div>
-                                </span>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
             </div>
             <div class="basket basket__soldout">
@@ -343,10 +136,10 @@
                     <div class="accordion__hide-btn"><button class="hide-btn hide-btn-soldout"></button></div>
                 </div>
                 <div class="basket__list basket__list-soldout gray">
-                    <div class="list-item list-item-mob">
+                    <div class="list-item solduot__list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/Frame3853.png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/Frame 277132129@2x.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Футболка UZcotton мужская</span>
@@ -359,16 +152,16 @@
                         <div class="list-item__right list-item__right-mob">
                             <div class="soldout__right">
                                 <div class="remainder__icons remainder__icons-mob">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
+                                    <button class="hearth solduot__delete"></button>
+                                    <button class="delete solduot__delete"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="list-item list-item-mob">
+                    <div class="list-item solduot__list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/277132129.png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/Frame 277132129@2x.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
@@ -381,16 +174,16 @@
                         <div class="list-item__right list-item__right-mob">
                             <div class="soldout__right">
                                 <div class="remainder__icons remainder__icons-mob">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
+                                    <button class="hearth solduot__delete"></button>
+                                    <button class="delete solduot__delete"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="list-item list-item-mob">
+                    <div class="list-item solduot__list-item list-item-mob">
                         <div class="list-item__goods">
                             <div class="list-item__goods-img">
-                                <img class="content-img content-img_soldout" src="/img/content/faber.png" alt="">
+                                <img class="content-img content-img_soldout" src="/img/content/faber@2x.png" alt="">
                             </div>
                             <div class="list-item__goods-info">
                                 <span class="goods-info__title goods-info__title_width regular">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell</span>
@@ -399,8 +192,8 @@
                         <div class="list-item__right list-item__right-mob">
                             <div class="soldout__right">
                                 <div class="remainder__icons remainder__icons-mob">
-                                    <button class="hearth"></button>
-                                    <button class="delete"></button>
+                                    <button class="hearth solduot__delete"></button>
+                                    <button class="delete solduot__delete"></button>
                                 </div>
                             </div>
                         </div>
@@ -433,14 +226,14 @@
                                 <span class="delivery__item-header semi-bold">5—6 февраля</span>
                                 <div class="delivery__item-goods">
                                     <div class="item-goods__good">
-                                        <img class="item-goods__good-img" src="/img/content/Bitmap.png" alt="">
+                                        <img class="item-goods__good-img" src="/img/content/Frame 3853.png" alt="">
                                     </div>
                                     <div class="item-goods__good">
-                                        <img class="item-goods__good-img" src="/img/content/Bitmap (1).png" alt="">
+                                        <img class="item-goods__good-img" src="/img/content/Frame 277132129.png" alt="">
                                         <span class="item-goods__good-label regular">184</span>
                                     </div>
                                     <div class="item-goods__good">
-                                        <img class="item-goods__good-img" src="/img/content/Bitmap (2).png" alt="">
+                                        <img class="item-goods__good-img" src="/img/content/faber.png" alt="">
                                         <span class="item-goods__good-label regular">2</span>
                                     </div>
                                 </div>
@@ -449,7 +242,7 @@
                                 <span class="delivery__item-header semi-bold">7—8 февраля</span>
                                 <div class="delivery__item-goods">
                                     <div class="item-goods__good">
-                                        <img class="item-goods__good-img" src="/img/content/Bitmap (1).png" alt="">
+                                        <img class="item-goods__good-img" src="/img/content/Frame 277132129.png" alt="">
                                         <span class="item-goods__good-label regular">16</span>
                                     </div>
                                 </div>
@@ -469,10 +262,10 @@
                     <div class="payment__content">
                         <div class="placing__header bold">
                             Способ оплаты
-                            <button class="change-btn bold">Изменить</button>
+                            <button class="change-btn bold"  onclick="openModal('modalpay')">Изменить</button>
                         </div>
                         <div class="payment__card regular">
-                            <div class="payment__card-system">
+                            <div class="payment__card-system placing__payment__card-system">
                                 <img src="/img/payment-system.svg" alt="">
                             </div>
                             <span class="payment__card-number">1234 56•• •••• 1234</span> 01/30
@@ -484,29 +277,29 @@
                     <span class="placing__header bold">Получатель</span>
                     <div class="recepient__list">
                         <div class="recepient__userdata recepient__userdata_top regular">
-                            <label class="userdata__label-top gray" for="">Имя</label>
-                            <input class="userdata__input" type="text" name="" id="" placeholder="Имя">
-                            <label class="userdata__label-bottom" for=""></label>
+                            <label class="userdata__label-top gray" for="name">Имя</label>
+                            <input class="userdata__input" type="text" name="name" id="name" placeholder="Имя" >
+                            <label class="userdata__label-bottom" for="name" id="namebottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_top regular">
-                            <label class="userdata__label-top gray" for=""></label>
-                            <input class="userdata__input" type="text" name="" id="" placeholder="Фамилия">
-                            <label class="userdata__label-bottom" for=""></label>
+                            <label class="userdata__label-top gray" for="lastname">Фамилия</label>
+                            <input class="userdata__input" type="text" name="lastname" id="lastname" placeholder="Фамилия" >
+                            <label class="userdata__label-bottom" for="lastname" id="lastnamebottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
-                            <label class="userdata__label-top gray" for=""></label>
-                            <input class="userdata__input" type="text" name="" id="" placeholder="Почта">
-                            <label class="userdata__label-bottom" for=""></label>
+                            <label class="userdata__label-top gray" for="email">Почта</label>
+                            <input class="userdata__input" type="email" name="email" id="email" placeholder="Почта" autocomplete>
+                            <label class="userdata__label-bottom" for="email" id="emailbottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
-                            <label class="userdata__label-top gray" for="">Телефон</label>
-                            <input class="userdata__input" type="text" name="" id="" value="+7 988 123-45-67" placeholder="Телефон">
-                            <label class="userdata__label-bottom" for=""></label>
+                            <label class="userdata__label-top gray" for="tel">Телефон</label>
+                            <input class="userdata__input" type="tel" name="tel" id="tel" placeholder="Телефон" autocomplete maxlength="30">
+                            <label class="userdata__label-bottom" for="tel" id="telbottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
-                            <label class="userdata__label-top gray" for=""></label>
-                            <input class="userdata__input" type="text" name="" id="" placeholder="ИНН">
-                            <label class="userdata__label-bottom" for="">Для таможенного оформления</label>
+                            <label class="userdata__label-top gray" for="inn">ИНН</label>
+                            <input class="userdata__input" type="number" name="inn" id="inn" placeholder="ИНН">
+                            <label class="userdata__label-bottom userdata__label-bottom_inn" id="innbottom" for="inn">Для таможенного оформления</label>
                         </div>
                     </div>
                 </div>
@@ -517,16 +310,16 @@
                 <div class="sidebar__content cost">
                     <div class="cost-header bold">
                         <span class="cost-header-left">Итого</span>
-                        <span class="cost-header-right">2 101 063 <span class="cost-header-valute">сом</span></span>
+                        <span class="cost-header-right"><span class="cost-header-number">2 101 063 </span><span class="cost-header-valute">сом</span></span>
                     </div>
                     <div class="cost-list regular">
                         <div class="cost-item">
-                            <span>203 товара</span>
-                            <span>2 302 048 сом</span>
+                            <span><span class="amount-all">203</span> товара</span>
+                            <span class="cost-no-sale">2 302 048 сом</span>
                         </div>
                         <div class="cost-item">
                             <span>Скидка</span>
-                            <span>−200 985 сом</span>
+                            <span class="cost-sale">−200 985 сом</span>
                         </div>
                         <div class="cost-item">
                             <span>Доставка</span>
@@ -556,10 +349,10 @@
                     <div class="sidebar-payment-top">
                         <div class="point__header bold">
                             Оплата картой
-                            <button class="edit-btn"></button>
+                            <button class="edit-btn" onclick="openModal('modalpay')"></button>
                         </div>
                         <div class="payment__card regular">
-                            <div class="payment__card-system">
+                            <div class="payment__card-system sidebar__payment__card-system">
                                 <img src="/img/payment-system.svg" alt="">
                             </div>
                             <span class="sidebar-payment-card regular">1234 12•• •••• 1234</span>
@@ -568,12 +361,12 @@
                     <div class="sidebar-payment-bottom regular">
                         <input class="checkbox-label" id="checkbox-pay" type="checkbox">
                         <label class="label-checkbox" for="checkbox-pay">Списать оплату сразу</label>
-                        Спишем оплату с карты при получении
+                        <span class="sidebar-payment-description">Спишем оплату с карты при получении</span>
                     </div>
                 </div>
             </div>
             <div class="sidebar__btn">
-                <button class="btn__to-order bold">Заказать</button>
+                <button class="btn__to-order bold" id="submit-button">Заказать</button>
                 <div class="btn__description regular">
                     <img src="/img/check.svg" alt="">
                     Соглашаюсь с правилами пользования торговой площадкой и возврата
@@ -595,5 +388,67 @@
         <a class="tabbar__link" href=""><span class="tabbar__icon favorites-svg"></span></a>
         <a class="tabbar__link" href=""><span class="tabbar__icon profile-svg"></span></a>
     </div>  
+    <div id="modalpay" class="modal modal-pay">
+        <div class="modal-pay__header">
+            <span class="modal-pay__header-text bold">Способ оплаты</span>
+            <button class="close-modal-button" onclick="closeModal('modalpay')"></button>
+        </div>
+        <div class="modal-pay__content">
+            <div class="modal-pay__content-cards">
+                <div class="card-item">
+                    <input type="radio" class="card-item-btn" id="card-1" name="cards" value="option1" checked>
+                    <label class="card-item-btn-label" for="card-1">
+                        <span class="card-label">
+                            <span class="card-label-icon">
+                                <img src="/img/payment-system.svg" alt="">
+                            </span>
+                        </span>
+                        <span class="card-number regular">
+                            1234 56•• •••• 1234
+                        </span>
+                    </label>
+                </div>
+                <div class="card-item">
+                    <input type="radio" class="card-item-btn" id="card-2" name="cards" value="option1">
+                    <label class="card-item-btn-label" for="card-2">
+                        <span class="card-label">
+                            <img src="/img/visa.svg" alt="">
+                        </span>
+                        <span class="card-number regular">
+                            1234 56•• •••• 1235
+                        </span>
+                    </label>
+                </div>
+                <div class="card-item">
+                    <input type="radio" class="card-item-btn" id="card-3" name="cards" value="option1">
+                    <label class="card-item-btn-label" for="card-3">
+                        <span class="card-label">
+                            <img src="/img/mastercard.svg" alt="">
+                        </span>
+                        <span class="card-number regular">
+                            1234 56•• •••• 1236
+                        </span>
+                    </label>
+                </div>
+                <div class="card-item">
+                    <input type="radio" class="card-item-btn" id="card-4" name="cards" value="option1">
+                    <label class="card-item-btn-label" for="card-4">
+                        <span class="card-label">
+                            <img src="/img/maestro.svg" alt="">
+                        </span>
+                        <span class="card-number regular">
+                            1234 56•• •••• 1237
+                        </span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="modal-pay__bottom">
+            <button class="modal-pay__bottom-btn bold" onclick="closeModal('modalpay')">Выбрать</button>
+        </div>
+    </div>
+    <div id="overlay" class="overlay"></div>
+
+    
 </body>
 </html>

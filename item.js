@@ -6,10 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const dataArr = [
         {  
-            id: 1,
-            img: '/img/content/Frame3853.png',
+            id: 'item1',
+            img: '/img/content/Frame 3853.png',
+            imgx: '/img/content/Frame 3853@2x.png',
             price: 522,
-            sale: 1051,
+            sale: 783,
             title: 'Футболка UZcotton мужская',
             color: 'белый',
             size: 56,
@@ -22,10 +23,11 @@ document.addEventListener("DOMContentLoaded", function() {
             reminder: 3,
         },
         { 
-            id: 2,
-            img: '/img/content/277132129.png',
-            price: '2 100 047',
-            sale: '2 300 047',
+            id: 'item2',
+            img: '/img/content/Frame 277132129.png',
+            imgx: '/img/content/Frame 277132129@2x.png',
+            price: '2 100 047',
+            sale: '3 150 070',
             title: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
             color: 'прозрачный',
             size: null,
@@ -38,10 +40,11 @@ document.addEventListener("DOMContentLoaded", function() {
             reminder: 203,
         },
         { 
-            id: 3,
+            id: 'item3',
             img: '/img/content/faber.png',
+            imgx: '/img/content/faber@2x.png',
             price: 494,
-            sale: 950,
+            sale: 741,
             title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
             color: null,
             size: null,
@@ -61,12 +64,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const checkboxInput = listItemClone.querySelector('.checkbox-label');
         checkboxInput.id = dataArr[i].id;
+        checkboxInput.value = dataArr[i].id;
 
         const checkboxLabel = listItemClone.querySelector('.label-checkbox');
-        checkboxLabel.for = dataArr[i].id;
+        checkboxLabel.setAttribute('for', dataArr[i].id);
 
         const imgElement = listItemClone.querySelector('.content-img');
-        imgElement.src = dataArr[i].img;
+        imgElement.src = dataArr[i].imgx;
 
         const priceElements = listItemClone.querySelectorAll('.price-new__digit');
         priceElements.forEach((priceElement) => {

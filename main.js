@@ -1,15 +1,4 @@
 
-// перенос слов с дефисами на новою строку в названиях товаров
-function preventHyphenation() {
-    const elements = document.getElementsByClassName("goods-info__title");
-    const elementsArray = Array.from(elements);
-    elementsArray.forEach(element => {
-        element.innerHTML = element.innerHTML.replace(/(\w+)-(\w+)/g, "<span class=\"nowrap\">$1-$2</span>");
-    });
-}
-
-window.addEventListener("load", preventHyphenation);
-
 document.addEventListener('DOMContentLoaded', function () {
 
     // аккордеон в наличии
@@ -55,68 +44,153 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // удаление и избранное у отсутвующих
+    const deleteButtons = document.querySelectorAll('.solduot__list-item .solduot__delete');
+    deleteButtons.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const listItem = button.closest('.solduot__list-item');
+            listItem.remove();
+            updateTotalItems();
+        });
+    });
+    function updateTotalItems() {
+        const totalItemsElement = document.querySelector('.solduot__header span');
+        const totalItems = document.querySelectorAll('.solduot__list-item').length;
+        totalItemsElement.textContent = `Отсутствуют · ${totalItems} товара`;
+        const basketSoldout = document.querySelector('.basket__soldout');
+        if (totalItems === 0) {
+            basketSoldout.style.display = 'none';
+        } else {
+            basketSoldout.style.display = 'block';
+        }
+    }
 
-    // идем по товарам
-    const itemGoods = document.querySelectorAll('[data-item]');
-   
-        itemGoods.forEach(itemGood => {
+    // чекбокс списать оплату сразу
+    const checkboxPay = document.getElementById('checkbox-pay');
+    const submitButton = document.getElementById('submit-button');
+    const costHeaderRight = document.querySelector('.cost-header-number');
+    const paymentTextSidebar = document.querySelector('.sidebar-payment-description');
+    const paymentTextPlacing = document.querySelector('.payment__description');
+    checkboxPay.addEventListener('change', function () {
+        if (checkboxPay.checked) {
+            paymentTextSidebar.style.display = 'none';
+            paymentTextPlacing.style.display = 'none';
+            submitButton.textContent = 'Оплатить ' + costHeaderRight.textContent + 'сом'; 
+            costHeaderText.textContent = ''; 
+        } else {
+            paymentTextSidebar.style.display = 'flex';
+            paymentTextPlacing.style.display = 'flex';
+            submitButton.textContent = 'Заказать'; 
+        }
+    });
 
-            const countCood = itemGood.querySelector('.count-cood');
-            const remainderAlert = itemGood.querySelector('.remainder-alert');
-            const plusButton = itemGood.querySelector('.counter__sign_plus');
-            const minusButton = itemGood.querySelector('.counter__sign_minus');
-            const input = itemGood.querySelector('.counter__input');
-            const remainingQuantity = parseInt(countCood.textContent) - input.value;
+    // выбор платежной карты
+    const selectButton = document.querySelector('.modal-pay__bottom-btn');
+    const paymentCardSystem = document.querySelector('.placing__payment__card-system img');
+    const cardNumberSidebar = document.querySelector('.sidebar-payment-card');
+    const cardNumberPayment = document.querySelector('.payment__card-number');
+    const paymentCardSystemSidebar = document.querySelector('.sidebar__payment__card-system img');
+    selectButton.addEventListener('click', function () {
+        const selectedCard = document.querySelector('input[name="cards"]:checked');
+        if (selectedCard) {
+            const cardSystem = selectedCard.nextElementSibling.querySelector('.card-label img').getAttribute('src');
+            const cardNumber = selectedCard.nextElementSibling.querySelector('.card-number').textContent;
+            paymentCardSystem.setAttribute('src', cardSystem);
+            paymentCardSystemSidebar.setAttribute('src', cardSystem);
+            cardNumberSidebar.textContent = cardNumber;
+            cardNumberPayment.textContent = cardNumber;
+        } 
+    });
 
-            if (parseInt(input.value) <= 1) {
-                minusButton.classList.add('counter__sign_disabled');
-            }
 
-            console.log(remainingQuantity)
-            if (remainingQuantity <= 2) {
-                remainderAlert.classList.remove('remainder-alert_hidden');
-                remainderAlert.textContent = `Осталось ${remainingQuantity} шт.`;
-                if (remainingQuantity == 0) {
-                    plusButton.classList.add('counter__sign_disabled');
-                }
-            } 
-               
-            itemGood.addEventListener('click', e => {
-                const target = e.target;
+    function formatNum(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
+    }
+    function removeSpaces(str) {
+        return str.replace(/\s/g, '');
+    }
 
-                let value = parseInt(input.value);
+    // чекбоксы товаров
+    const mainCheckbox = document.getElementById('checkbox-choose');
+    const subCheckboxes = document.querySelectorAll('.checkbox-item');
+    const costHeader = document.querySelector('.cost-header-number');
+    const costHeaderNoSale = document.querySelector('.cost-no-sale');
+    const costHeaderSale = document.querySelector('.cost-sale');
 
-                if (target.classList.contains('counter__sign_plus') && !plusButton.classList.contains('counter__sign_disabled')) {
-                    value++;
-                } else if (target.classList.contains('counter__sign_minus') && !minusButton.classList.contains('counter__sign_disabled')) {
-                    value--;
+    mainCheckbox.addEventListener('change', function () {
+        if (this.checked) {
+            subCheckboxes.forEach(checkbox => {
+                checkbox.checked = true;
+            });
+            let totalCost = 0;
+            const itemGoods = document.querySelectorAll('[data-item]');
+            itemGoods.forEach(itemGood => {
+
+                const check = itemGood.querySelector('.checkbox-item');
+                const isChecked = check.checked;
+                
+                if (isChecked) {
+                    const priceDig = itemGood.querySelector('.price-new__digit');
+                    totalCost += parseInt(removeSpaces(priceDig.textContent));
                 } 
-
-                if (value <= 1) {
-                    minusButton.classList.add('counter__sign_disabled');
-                } else {
-                    minusButton.classList.remove('counter__sign_disabled');
-                }
-    
-                const remainingQuantity = parseInt(countCood.textContent) - value;
-
-                if (remainingQuantity <= 2) {
-                    remainderAlert.classList.remove('remainder-alert_hidden');
-                    remainderAlert.textContent = `Осталось ${remainingQuantity} шт.`;
-                    if (remainingQuantity == 0) {
-                        plusButton.classList.add('counter__sign_disabled');
-                    }else {
-                        plusButton.classList.remove('counter__sign_disabled');
-                    }
-                } else {
-                    remainderAlert.classList.add('remainder-alert_hidden');
-                }
-
-                input.value = value;
-
             })
-        })
+            costHeader.textContent = formatNum(totalCost) + ' ';
+            costHeaderNoSale.textContent = formatNum(Math.floor(totalCost * 1.9)) + ' сом';
+
+            if(totalCost != 0) {
+            costHeaderSale.textContent = '−' + formatNum(Math.floor(totalCost * 0.1)) + ' сом';
+            } else {
+                costHeaderSale.textContent = formatNum(Math.floor(totalCost * 0.1)) + ' сом';
+            }            
+        } else {
+            subCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });           
+            costHeader.textContent = 0 + ' ';
+            costHeaderNoSale.textContent = 0 + ' сом';
+            costHeaderSale.textContent = 0 + ' сом';
+        }
+    });
+
+    subCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            const allChecked = Array.from(subCheckboxes).every(checkbox => checkbox.checked);
+            mainCheckbox.checked = allChecked;
+        });
+    });
+
+
+
+
+
+
+
+
+
     
 
 });
 
+window.addEventListener("load", preventHyphenation);
+
+// перенос слов с дефисами на новою строку в названиях товаров
+function preventHyphenation() {
+    const elements = document.getElementsByClassName("goods-info__title");
+    const elementsArray = Array.from(elements);
+    elementsArray.forEach(element => {
+        element.innerHTML = element.innerHTML.replace(/(\w+)-(\w+)/g, "<span class=\"nowrap\">$1-$2</span>");
+    });
+}
+
+function openModal(modalpay) {
+    var modal = document.getElementById(modalpay);
+    modal.style.display = "flex";
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "flex";
+}
+function closeModal(modalpay) {
+    var modal = document.getElementById(modalpay);
+    modal.style.display = "none";
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
+}
