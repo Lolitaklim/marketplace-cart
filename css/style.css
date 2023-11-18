@@ -1688,6 +1688,7 @@ input::-webkit-inner-spin-button {
         align-items: center;
         padding-top: 5px;
         gap: 17px;
+        justify-content: space-between;
     }
     
     .counter {
