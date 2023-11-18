@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
             paymentTextSidebar.style.display = 'none';
             paymentTextPlacing.style.display = 'none';
             submitButton.textContent = 'Оплатить ' + costHeaderRight.textContent + 'сом'; 
-            costHeaderText.textContent = ''; 
         } else {
             paymentTextSidebar.style.display = 'flex';
             paymentTextPlacing.style.display = 'flex';
@@ -102,7 +101,6 @@ document.addEventListener('DOMContentLoaded', function () {
         } 
     });
 
-
     function formatNum(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
@@ -116,7 +114,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const costHeader = document.querySelector('.cost-header-number');
     const costHeaderNoSale = document.querySelector('.cost-no-sale');
     const costHeaderSale = document.querySelector('.cost-sale');
-
     mainCheckbox.addEventListener('change', function () {
         if (this.checked) {
             subCheckboxes.forEach(checkbox => {
@@ -151,7 +148,6 @@ document.addEventListener('DOMContentLoaded', function () {
             costHeaderSale.textContent = 0 + ' сом';
         }
     });
-
     subCheckboxes.forEach(checkbox => {
         checkbox.addEventListener('change', function () {
             const allChecked = Array.from(subCheckboxes).every(checkbox => checkbox.checked);
@@ -159,16 +155,32 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
+    // удаление в модалке
+    const deleteBtn = document.querySelectorAll('.tab-item-courrier .delete');
+    deleteBtn.forEach(function (button) {
+        button.addEventListener('click', function () {
+            const listItem = button.closest('.tab-item-courrier');
+            listItem.remove();
+            updateTotalItems();
+        });
+    });
 
-
-
-
-
-
-
+    // выбор пункта выдачи
+    const selectBtn = document.querySelector('.select-point');
+    const pointAddrSidebar = document.querySelector('.point__addr-sidebar');
+    const pointAddr = document.querySelector('.point__addr');
+    selectBtn.addEventListener('click', function () {
+        const selectedPoint = document.querySelector('input[name="tab-point"]:checked');
+        if (selectedPoint) {
+            const cardNumber = selectedPoint.nextElementSibling.querySelector('.tab-point-select').textContent;
+            pointAddrSidebar.textContent = cardNumber;
+            pointAddr.textContent = cardNumber;
+        } 
+    });
 
     
 
+    openTab('tab1');
 });
 
 window.addEventListener("load", preventHyphenation);
@@ -182,6 +194,7 @@ function preventHyphenation() {
     });
 }
 
+// модальные окна
 function openModal(modalpay) {
     var modal = document.getElementById(modalpay);
     modal.style.display = "flex";
@@ -195,28 +208,18 @@ function closeModal(modalpay) {
     overlay.style.display = "none";
 }
 
-
-function openModalDel(modaldelivery) {
-    var modal = document.getElementById(modaldelivery);
-    modal.style.display = "flex";
-    var overlay = document.getElementById("overlay");
-    overlay.style.display = "flex";
-}
-function closeModalDel(modaldelivery) {
-    var modal = document.getElementById(modaldelivery);
-    modal.style.display = "none";
-    var overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
-}
-
+// табы
 function openTab(tabId) {
-    // Скрываем все табы
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(tabContent => {
-        tabContent.classList.add('display-none');
+        tabContent.style.display = 'none';
     });
-
-    // Отображаем выбранный таб
     const selectedTab = document.getElementById(tabId);
-    selectedTab.classList.remove('display-none');
+    selectedTab.style.display = 'flex';
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => {
+        tab.classList.remove('tab-active');
+    });
+    const activeTab = document.querySelector(`.tab[onclick="openTab('${tabId}')"]`);
+    activeTab.classList.add('tab-active');
 }

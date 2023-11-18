@@ -398,7 +398,7 @@ body {
     width: 72px;
     height: 96px;
     border-radius: 8px;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), lightgray 50% / cover no-repeat;
 }
 
 .list-item__goods-info {
@@ -1424,14 +1424,6 @@ input::-webkit-inner-spin-button {
     align-self: stretch;
 }
 
-.tab-content-active {
-    display: flex;
-}
-
-.tab-content-no-active {
-    display: none;
-}
-
 .tab-content__header {
     display: flex;
     height: 18px;
@@ -1452,11 +1444,6 @@ input::-webkit-inner-spin-button {
     gap: 8px;
     align-self: stretch;
 }
-
-/* .tab-content .card-item-btn + .card-item-btn-label {
-    display: flex;
-    flex-direction: row;
-} */
 
 .tab-label-courrier {
     display: flex;
@@ -1954,7 +1941,12 @@ input::-webkit-inner-spin-button {
     .profile-svg {
         background-image: url(/img/profile.svg);
     }
-        
+
+    
+    .tab-label-courrier {
+       
+        width: unset;
+    }
 
 }
 
