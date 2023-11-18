@@ -194,3 +194,29 @@ function closeModal(modalpay) {
     var overlay = document.getElementById("overlay");
     overlay.style.display = "none";
 }
+
+
+function openModalDel(modaldelivery) {
+    var modal = document.getElementById(modaldelivery);
+    modal.style.display = "flex";
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "flex";
+}
+function closeModalDel(modaldelivery) {
+    var modal = document.getElementById(modaldelivery);
+    modal.style.display = "none";
+    var overlay = document.getElementById("overlay");
+    overlay.style.display = "none";
+}
+
+function openTab(tabId) {
+    // Скрываем все табы
+    const tabContents = document.querySelectorAll('.tab-content');
+    tabContents.forEach(tabContent => {
+        tabContent.classList.add('display-none');
+    });
+
+    // Отображаем выбранный таб
+    const selectedTab = document.getElementById(tabId);
+    selectedTab.classList.remove('display-none');
+}

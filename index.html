@@ -96,7 +96,7 @@
                             <div class="list-item__remainder">
                                 <div class="counter regular" >
                                     <span class="counter__sign counter__sign_minus">−</span>
-                                    <span class="counter__count"><input class="counter__input" type="text" value="" ></span>
+                                    <span class="counter__count"><input class="counter__input" type="number" value="" disabled></span>
                                     <span class="counter__sign counter__sign_plus">+</span>
                                 </div>
                                 <span class="count-cood"></span>
@@ -205,7 +205,7 @@
                     <div class="delivery__method">
                         <div class="placing__header bold">
                             Способ доставки
-                            <button class="change-btn bold">Изменить</button>
+                            <button class="change-btn bold" onclick="openModalDel('modaldelivery')">Изменить</button>
                         </div>
                         <div class="delivery__list">
                             <div class="delivery__item">
@@ -289,12 +289,12 @@
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
                             <label class="userdata__label-top gray" for="email">Почта</label>
-                            <input class="userdata__input" type="email" name="email" id="email" placeholder="Почта" autocomplete>
+                            <input class="userdata__input" type="email" name="email" id="email" placeholder="Почта" >
                             <label class="userdata__label-bottom" for="email" id="emailbottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
                             <label class="userdata__label-top gray" for="tel">Телефон</label>
-                            <input class="userdata__input" type="tel" name="tel" id="tel" placeholder="Телефон" autocomplete maxlength="30">
+                            <input class="userdata__input" type="tel" name="tel" id="tel" placeholder="Телефон"  maxlength="30">
                             <label class="userdata__label-bottom" for="tel" id="telbottom"></label>
                         </div>
                         <div class="recepient__userdata recepient__userdata_bottom regular">
@@ -332,7 +332,7 @@
                     <div class="sidebar-delivery__point">
                         <div class="point__header bold">
                             Доставка в пункт выдачи
-                            <button class="edit-btn"></button>
+                            <button class="edit-btn" onclick="openModalDel('modaldelivery')"></button>
                         </div>
                         <span class="point__addr-sidebar regular">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                         <span class="point__data regular">5–8 фев</span>
@@ -390,8 +390,8 @@
         <a class="tabbar__link" href=""><span class="tabbar__icon profile-svg"></span></a>
     </div>  
     <div id="modalpay" class="modal modal-pay">
-        <div class="modal-pay__header">
-            <span class="modal-pay__header-text bold">Способ оплаты</span>
+        <div class="modal__header">
+            <span class="modal__header-text bold">Способ оплаты</span>
             <button class="close-modal-button" onclick="closeModal('modalpay')"></button>
         </div>
         <div class="modal-pay__content">
@@ -449,6 +449,100 @@
         </div>
     </div>
     <div id="overlay" class="overlay"></div>
+
+    <div id="modaldelivery" class="modal modaldelivery">
+        <div class="modal__header">
+            <span class="modal-pay__header-text bold">Способ доставки</span>
+            <button class="close-modal-button" onclick="closeModalDel('modaldelivery')"></button>
+        </div>
+        <div class="modaldelivery__content">
+            <div class="tabs">
+                <div class="tab bold" onclick="openTab('tab1')">В пункт выдачи</div>
+                <div class="tab bold" onclick="openTab('tab2')">Курьером</div>
+            </div>
+
+            <div id="tab2" class="tab-content">
+                <div class="tab-content__header bold">
+                    Мои адреса
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="courrier1" name="tab-courrier" checked>
+                    <label class="card-item-btn-label" for="courrier1">
+                        <span class="tab-label-courrier regular">
+                            Бишкек, улица Табышалиева, 57
+                        </span>
+                    </label>
+                    <button class="delete"></button>
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="courrier2" name="tab-courrier">
+                    <label class="card-item-btn-label" for="courrier2">
+                        <span class="tab-label-courrier regular">
+                            Бишкек, улица Жукеева-Пудовкина, 77/1
+                        </span>
+                    </label>
+                    <button class="delete"></button>
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="courrier3" name="tab-courrier">
+                    <label class="card-item-btn-label" for="courrier3">
+                        <span class="tab-label-courrier regular">
+                            Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
+                        </span>
+                    </label>
+                    <button class="delete"></button>
+                </div>
+            </div>
+
+            <div id="tab1" class="tab-content display-none">
+                <div class="tab-content__header bold">
+                    Мои адреса
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="point1" name="tab-point" checked>
+                    <label class="card-item-btn-label item-btn-courrier" for="point1">
+                        <div class="tab-label-courrier regular">
+                            г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                            <div class="courrier_rating regular gray">
+                                <img src="/img/star.svg" alt="">Пункт выдачи
+                            </div>
+                        </div>
+                        
+                    </label>
+                    <button class="delete"></button>
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="point2" name="tab-point" checked>
+                    <label class="card-item-btn-label item-btn-courrier" for="point2">
+                        <div class="tab-label-courrier regular">
+                            г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1
+                            <div class="courrier_rating regular gray">
+                                <img src="/img/star.svg" alt=""><span class="rating__star">4.99</span>Пункт выдачи
+                            </div>
+                        </div>
+                        
+                    </label>
+                    <button class="delete"></button>
+                </div>
+                <div class="tab-item-courrier">
+                    <input type="radio" class="card-item-btn" id="point3" name="tab-point" checked>
+                    <label class="card-item-btn-label item-btn-courrier" for="point3">
+                        <div class="tab-label-courrier regular">
+                            г. Бишкек, улица Табышалиева, д. 57
+                            <div class="courrier_rating regular gray">
+                                <img src="/img/star.svg" alt=""><span class="rating__star">4.99</span>Пункт выдачи
+                            </div>
+                        </div>
+    
+                    </label>
+                    <button class="delete"></button>
+                </div>
+            </div>
+        </div>
+        <div class="modal-pay__bottom">
+            <button class="modal-pay__bottom-btn bold" onclick="closeModalDel('modaldelivery')">Выбрать</button>
+        </div>
+    </div>
 
     
 </body>
