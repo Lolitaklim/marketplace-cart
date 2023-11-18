@@ -19,19 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // аккордеон отсутствующих
-    var accordionBtnSoldout = document.querySelector('.hide-btn-soldout');
-    var basketListSoldout = document.querySelector('.basket__list-soldout');
-    basketListSoldout.style.maxHeight = basketList.scrollHeight + 'px';
-    accordionBtnSoldout.addEventListener('click', function () {
-        accordionBtnSoldout.classList.toggle('hide-btn-flipped');
-        if(basketListSoldout.style.maxHeight) {
-            basketListSoldout.style.maxHeight = null
-        } else {
-            basketListSoldout.style.maxHeight = basketListSoldout.scrollHeight + 'px'
-        }
-    });
-
     // тултипы поверх hidden
     document.addEventListener('DOMContentLoaded', function () {
         var icon = document.querySelector('.icon-i');
@@ -83,6 +70,19 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
+    // аккордеон отсутствующих
+    var accordionBtnSoldout = document.querySelector('.hide-btn-soldout');
+    var basketListSoldout = document.querySelector('.basket__list-soldout');
+    basketListSoldout.style.maxHeight = basketList.scrollHeight + 'px';
+    accordionBtnSoldout.addEventListener('click', function () {
+        accordionBtnSoldout.classList.toggle('hide-btn-flipped');
+        if(basketListSoldout.style.maxHeight) {
+            basketListSoldout.style.maxHeight = null
+        } else {
+            basketListSoldout.style.maxHeight = basketListSoldout.scrollHeight + 'px'
+        }
+    });
+
     // выбор платежной карты
     const selectButton = document.querySelector('.modal-pay__bottom-btn');
     const paymentCardSystem = document.querySelector('.placing__payment__card-system img');
@@ -101,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } 
     });
 
+    // форматирование пробелов
     function formatNum(number) {
         return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
     }
@@ -177,8 +178,6 @@ document.addEventListener('DOMContentLoaded', function () {
             pointAddr.textContent = cardNumber;
         } 
     });
-
-    
 
     openTab('tab1');
 });

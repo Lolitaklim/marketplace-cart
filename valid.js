@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             validateInn(); 
         } else {
             clearError(innInput,'innbottom');
-            clearErrorInn(innInput,'innbottom');
+            clearErrorInn('innbottom');
         }
     });
 
@@ -88,19 +88,10 @@ document.addEventListener('DOMContentLoaded', function () {
     submitButton.addEventListener('click', function (event) {
         event.preventDefault(); 
 
-        validateName();
         validateNameSend();
-
-        validateLastame();
         validateLastameSend();
- 
-        validateEmail(); 
         validateEmailSend();
-
-        validateInn();
         validateInnSend();
-
-        validateTel();
         validateTelSend();
       
         if (!isFormValid()) {
@@ -127,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
         const cleanedPhone = telValue.replace(/\D/g, '');
-        const phoneRegex = /^\+\d{1,2}\s\d{3}\s\d{3}\s\d{2}\s\d{2}$/;
+        const phoneRegex = /^\d{1}\s?\d{3}\s?\d{3}\s?\d{2}\s?\d{2}$/;
         if (!phoneRegex.test(cleanedPhone)) {
         
             showError(telInput,'telbottom','Формат: +9 999 999 99 99');
@@ -142,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showError(telInput,'telbottom','Укажите номер телефона');
         } else {
             clearError(telInput,'telbottom');
+            validateTel();
         }
     }
 
@@ -169,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             clearErrorInn('innbottom');
             clearError(innInput,'innbottom');
+            validateInn();
         }
     }
 
@@ -186,6 +179,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showError(nameInput,'namebottom','Укажите имя');
         } else {
             clearError(nameInput,'namebottom');
+            validateName();
         }
     }
 
@@ -203,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showError(lastnameInput,'lastnamebottom','Укажите фамилию');
         } else {
             clearError(lastnameInput,'lastnamebottom');
-            
+            validateLastame();
         }
     }
 
@@ -228,7 +222,7 @@ document.addEventListener('DOMContentLoaded', function () {
             showError(emailInput,'emailbottom','Укажите электронную почту');
         } else {
             clearError(emailInput,'emailbottom');
-            
+            validateEmail();
         }
     }
 
