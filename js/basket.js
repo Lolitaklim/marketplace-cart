@@ -1,13 +1,6 @@
 
 document.addEventListener('DOMContentLoaded', function () {
-
    
-
-    const label1 = document.getElementById('itemone');
-    const label2 = document.getElementById('itemtwo');
-    const label3 = document.getElementById('itemfree');
-    
-
     const costHeader = document.querySelector('.cost-header-number');
     const costHeaderNoSale = document.querySelector('.cost-no-sale');
     const costHeaderSale = document.querySelector('.cost-sale');
@@ -17,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function removeSpaces(str) {
         return str.replace(/\s/g, '');
     }
-
 
     const itemGoods = document.querySelectorAll('[data-item]');
     itemGoods.forEach(itemGood => {
@@ -84,21 +76,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }
             input.value = value;
 
-    
-            // лейблы доделать
-            const idGood = itemGood.querySelector('.checkbox-label');
-            const idGoodNum = idGood.id;
-            if(idGoodNum == 'item1') {
-                label1.textContent = value;
-            }
-            if(idGoodNum == 'item2') {
-                let value2 = value -184;
-                    label2.textContent = value2;
-            }
-            if(idGoodNum == 'item3') {
-                label3.textContent = value;
-            }
-
             // вывод цены товара
             const totalPriceNew = value * initialPrice;
             const totalPriceSale = totalPriceNew * 1.5;
@@ -117,19 +94,16 @@ document.addEventListener('DOMContentLoaded', function () {
             const itemGoods = document.querySelectorAll('[data-item]');
             itemGoods.forEach(itemGood => {
                 const inputamountAll = itemGood.querySelector('.counter__input');
-
                 amountAll = amountAll + parseInt(inputamountAll.value);
                 amount++;
-
                 const checkbox = itemGood.querySelector('.checkbox-item');
                 const isChecked = checkbox.checked;
-                
                 if (isChecked) {
                     const priceDig = itemGood.querySelector('.price-new__digit');
                     totalCost += parseInt(removeSpaces(priceDig.textContent));
                 } 
-                
             })
+
             costHeader.textContent = formatNum(totalCost) + ' ';
             costHeaderNoSale.textContent = formatNum(Math.floor(totalCost * 1.9)) + ' сом';
 
@@ -137,23 +111,33 @@ document.addEventListener('DOMContentLoaded', function () {
             costHeaderSale.textContent = '−' + formatNum(Math.floor(totalCost * 0.1)) + ' сом';
             } else {
                 costHeaderSale.textContent = formatNum(Math.floor(totalCost * 0.1)) + ' сом';
-
             }
 
             const amountAllCreate = document.querySelector('.amount-all');
-            amountAllCreate.textContent = amountAll + ' ';
-
             const labelBusket = document.querySelector('.basket-label');
             const labelTabbar = document.querySelector('.tabbar__label');
+
+            amountAllCreate.textContent = amountAll + ' ';
             labelBusket.textContent = amount;
             labelTabbar.textContent = amount;
 
-
-
+            // лейблы в доставке
+            const label1 = document.getElementById('item-1');
+            const label2 = document.getElementById('item-2');
+            const label3 = document.getElementById('item-3'); 
             
-
-
-
+            const idGood = itemGood.querySelector('.checkbox-label');
+            const idGoodNum = idGood.id;
+            if(idGoodNum == 'item1') {
+                label1.textContent = value;
+            }
+            if(idGoodNum == 'item2') {
+                let value2 = value -184;
+                    label2.textContent = value2;
+            }
+            if(idGoodNum == 'item3') {
+                label3.textContent = value;
+            }
             
         })
     })
