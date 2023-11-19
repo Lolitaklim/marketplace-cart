@@ -7,8 +7,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const dataArr = [
         {  
             id: 'item1',
-            img: '/img/content/Frame 3853.png',
-            imgx: '/img/content/Frame 3853@2x.png',
+            img: '/img/content/tshirt.png',
             price: 522,
             sale: 783,
             title: 'Футболка UZcotton мужская',
@@ -24,8 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         { 
             id: 'item2',
-            img: '/img/content/Frame 277132129.png',
-            imgx: '/img/content/Frame 277132129@2x.png',
+            img: '/img/content/case.png',
             price: '2 100 047',
             sale: '3 150 070',
             title: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
@@ -41,8 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
         },
         { 
             id: 'item3',
-            img: '/img/content/faber.png',
-            imgx: '/img/content/faber@2x.png',
+            img: '/img/content/pencils.png',
             price: 494,
             sale: 741,
             title: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
@@ -70,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function() {
         checkboxLabel.setAttribute('for', dataArr[i].id);
 
         const imgElement = listItemClone.querySelector('.content-img');
-        imgElement.src = dataArr[i].imgx;
+        imgElement.src = dataArr[i].img;
 
         const priceElements = listItemClone.querySelectorAll('.price-new__digit');
         priceElements.forEach((priceElement) => {
