@@ -1,0 +1,105 @@
+Дмитрий Крюков
+15:57 16 янв.
+
+Общее:
+Структура окей. Название файлов лучше в ловеркейсе.
+
+Такое бы подфиксить:
+Vector.svg
+
+Шрифты добавлены.
+
+HTML:
+Скрипты в хеде лучше бы отложить через дефер или вынести вниз файла.
+<script src="/js/item.js"></script>
+
+Немного напрягает дублирование regular класса для худобы шрифта. Вроде он по умолчанию должен быть таким.
+
+Это лучше в джиэсике делать:
+onclick="openModal('modalpay')
+
+Темплейты — найс.
+
+CSS:
+Фонтфейсы с разными форматами файла шрифта лучше бы объединить и через запятую в одно правило.
+
+Файлик стилей лучше бы распилить на куски, а цвета в переменные загнать.
+
+Лучше в ргба:
+background-color: #FFFFFF33;
+
+Фонт-фемели и фонт-вейт должен каскадироваться с боди:
+font-family: 'Segoe UI', Arial, sans-serif;
+font-weight: 400;
+
+Иногда легко было избежать дублирования когда, если добавить отдельный класс с повторяющимися свойствами.
+Например, .hearth и .delete в основном повторяют друг друга.
+
+М?
+background: linear-gradient(0deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.05) 100%), url(<path-to-image>), lightgray 50% / cover no-repeat, url(<path-to-image>), lightgray 50% / cover no-repeat;
+height: 56px;
+
+Местами можно через запятушку:
+.tab:hover {
+border: 2px solid #CB11AB;
+}
+
+.tab-active {
+border: 2px solid #CB11AB;
+}
+
+
+Дмитрий Крюков
+03:08 11 мар.
+
+Смотрю JS:
+Эх:
+var
+
+Зачем-то добавляется два лисенера:
+document.addEventListener('DOMContentLoaded', function () {
+
+Думаю, что такие штуки лучше в цсс сделать:
+icon.addEventListener('mouseover', function () {
+tooltip.classList.remove('tooltip-hidden');
+});
+icon.addEventListener('mouseout', function () {
+tooltip.classList.add('tooltip-hidden');
+});
+... ну и стрелочные функции чуть-чуть читабельнее, как по мне.
+
+Лучше стайл не использовать из js, а переключать класс:
+basketSoldout.style.display = 'none';
+
+Здесь можно упростить очевидным способом. Убрать там второе if, все дела:
+if (this.checked) {
+subCheckboxes.forEach(checkbox => {
+checkbox.checked = true;
+});
+let totalCost = 0;
+const itemGoods = document.querySelectorAll('[data-item]');
+itemGoods.forEach(itemGood => {
+const check = itemGood.querySelector('.checkbox-item');
+const isChecked = check.checked;
+
+if (isChecked) {
+const priceDig = itemGood.querySelector('.price-new__digit');
+totalCost += parseInt(removeSpaces(priceDig.textContent));
+}
+})
+
+Данные я бы вынес в отдельный файли и не примешивал логику в него.
+В файле item.js хочется переписать:
+for (let i = 0; i < dataArr.length; i++) {
+... на фор-ич.
+Тут же можно сделать деструктуризацию, чтобы не писать arr[i] каждый раз.
+
+В коде часто повторяется такая конструкция:
+const storageElement = listItemClone.querySelector('.storage');
+storageElement.textContent = dataArr[i].storage;
+... думаю, что здесь можно сделать какую-то микрофункцию, которая будет упрощать восприятие.
+
+Дмитрий Крюков
+03:20 11 мар.
+
+Ещё есть более рискованное решение, которое может помочь. Использовать маппинг элемент → значение. Возможно будет ещё приятнее :-)
