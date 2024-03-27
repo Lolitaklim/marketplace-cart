@@ -1,0 +1,24 @@
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    align-self: stretch;
+}
+
+.footer-content {
+    display: flex;
+    padding: 11px 24px;
+    flex-direction: column;
+    align-items: center;
+    align-self: stretch;
+}
+
+.footer-description {
+    align-self: stretch;
+    color: rgba(255, 255, 255, 0.70);
+    text-align: center;
+    font-size: 13px;
+    line-height: 1.23;
+    word-spacing: 0.4px;
+    letter-spacing: 0.1px;
+}
