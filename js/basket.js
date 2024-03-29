@@ -38,7 +38,7 @@ itemGoods.forEach(itemGood => {
         
         const target = e.target;
 
-        if ((target.classList.contains('delete')) || (target.classList.contains('hearth'))) {
+        if (target.classList.contains('delete')) {
             const listItem = itemGood.closest('.list-item-instock');
             if (listItem) {
                 listItem.remove();
@@ -75,10 +75,10 @@ itemGoods.forEach(itemGood => {
         const totalPriceNew = value * initialPrice;
         const totalPriceSale = totalPriceNew * 1.5;
 
-        priceDigits.forEach(function (priceDigit) {
+        priceDigits.forEach((priceDigit) => {
             priceDigit.textContent = formatNum(Math.floor(totalPriceNew));
         });
-        priceSale.forEach(function (priceSal) {
+        priceSale.forEach((priceSal) => {
             priceSal.textContent = formatNum(Math.floor(totalPriceSale));
         });
 
@@ -98,16 +98,13 @@ itemGoods.forEach(itemGood => {
                 totalCost += parseInt(removeSpaces(priceDig.textContent));
             } 
         })
-
+        showCartCounter ();
         costHeader.textContent = formatNum(totalCost) + ' ';
         costHeaderNoSale.textContent = formatNum(Math.floor(totalCost * 1.9)) + ' сом';
-
-        if(totalCost != 0) {
         costHeaderSale.textContent = '−' + formatNum(Math.floor(totalCost * 0.1)) + ' сом';
-        } else {
-            costHeaderSale.textContent = formatNum(Math.floor(totalCost * 0.1)) + ' сом';
+        if(!totalCost) {
+            hideCartCounter ();
         }
-
         const amountAllCreate = document.querySelector('.amount-all');
         const labelBusket = document.querySelector('.basket-label');
         const labelTabbar = document.querySelector('.tabbar__label');

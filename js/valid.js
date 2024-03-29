@@ -6,21 +6,24 @@ const telInput = document.getElementById('tel');
 
 const inputs = document.querySelectorAll('.userdata__input');
 
-inputs.forEach(function(input) {
+inputs.forEach((input) => {
     const labelTop = input.previousElementSibling;
-    input.addEventListener('input', function () {
+    input.addEventListener('input', () => {
         if (input.value.trim() !== '') {
-            labelTop.style.display = 'block';
+            labelTop.classList.remove('display-none');
+            labelTop.classList.add('display-block');
         } else {
-            labelTop.style.display = 'none';
+            labelTop.classList.remove('display-block');
+            labelTop.classList.add('display-none');
         }
     });
 });
 
-telInput.addEventListener('blur', function () {
+telInput.addEventListener('blur', () => {
     validateTel();
 });
-telInput.addEventListener('input', function () {
+
+telInput.addEventListener('input', () => {
     if (telInput.classList.contains('error')) {
         validateTel(); 
     } else {
@@ -28,7 +31,7 @@ telInput.addEventListener('input', function () {
     }
 });
 
-telInput.addEventListener('input', function (event) {
+telInput.addEventListener('input', (event) => {
     let inputValue = event.target.value.replace(/\D/g, '');
     if (inputValue.length > 0) {
         inputValue = '+' + inputValue.substring(0, 1) + ' ' + inputValue.substring(1, 4) + ' ' + inputValue.substring(4, 7) + ' ' + inputValue.substring(7, 9) + ' ' + inputValue.substring(9, 11);
@@ -37,10 +40,11 @@ telInput.addEventListener('input', function (event) {
     event.target.value = inputValue;
 });
 
-innInput.addEventListener('blur', function () {
+innInput.addEventListener('blur', () => {
     validateInn();
 });
-innInput.addEventListener('input', function () {
+
+innInput.addEventListener('input', () => {
     if (innInput.classList.contains('error')) {
         validateInn(); 
     } else {
@@ -49,10 +53,11 @@ innInput.addEventListener('input', function () {
     }
 });
 
-emailInput.addEventListener('blur', function () {
+emailInput.addEventListener('blur', () => {
     validateEmail();
 });
-emailInput.addEventListener('input', function () {
+
+emailInput.addEventListener('input', () => {
     if (emailInput.classList.contains('error')) {
         validateEmail(); 
     } else {
@@ -60,10 +65,11 @@ emailInput.addEventListener('input', function () {
     }
 });
 
-nameInput.addEventListener('blur', function () {
+nameInput.addEventListener('blur', () => {
     validateName();
 });
-nameInput.addEventListener('input', function () {
+
+nameInput.addEventListener('input', () => {
     if (nameInput.classList.contains('error')) {
         validateName(); 
     } else {
@@ -71,10 +77,11 @@ nameInput.addEventListener('input', function () {
     }
 });
 
-lastnameInput.addEventListener('blur', function () {
+lastnameInput.addEventListener('blur', () => {
     validateLastame();
 });
-lastnameInput.addEventListener('input', function () {
+
+lastnameInput.addEventListener('input', () => {
     if (lastnameInput.classList.contains('error')) {
         validateLastame(); 
     } else {
@@ -82,7 +89,7 @@ lastnameInput.addEventListener('input', function () {
     }
 });
 
-submitButton.addEventListener('click', function (event) {
+submitButton.addEventListener('click', (event) => {
     event.preventDefault(); 
 
     validateNameSend();
@@ -124,6 +131,7 @@ function validateTel() {
         clearError(telInput,'telbottom');
     }
 }
+
 function validateTelSend() {
     const telValue = telInput.value.trim();
     if (telValue === '') {
@@ -150,6 +158,7 @@ function validateInn() {
         clearError(innInput,'innbottom');
     }
 }
+
 function validateInnSend() {
     const innValue = innInput.value.trim();
     if (innValue === '') {
@@ -170,6 +179,7 @@ function validateName() {
         clearError(nameInput,'namebottom');
     }
 }
+
 function validateNameSend() {
     const nameValue = nameInput.value.trim();
     if (nameValue === '') {
@@ -188,6 +198,7 @@ function validateLastame() {
         clearError(lastnameInput,'lastnamebottom');
     }
 }
+
 function validateLastameSend() {
     const lastnameValue = lastnameInput.value.trim();
     if (lastnameValue === '') {
@@ -206,6 +217,7 @@ function validateEmail() {
         clearError(emailInput,'emailbottom');
     }
 }
+
 function isValidEmail(email) {
     if (email.trim() === '') {
         return true;
@@ -213,6 +225,7 @@ function isValidEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
+
 function validateEmailSend() {
     const emailValue = emailInput.value.trim();
     if (emailValue === '') {
@@ -223,32 +236,31 @@ function validateEmailSend() {
     }
 }
 
-
 function showError(input, errorLabelId, message) {
     const errorLabel = document.getElementById(errorLabelId);
-    input.style.color = '#F55123';
+    input.classList.add('orange');
     errorLabel.textContent = message;
-    input.style.borderBottomColor = '#F55123';
+    input.classList.add('orange-border');
     input.classList.add('error');
 
 }
 
 function clearError(input, errorLabelId) {
     const errorLabel = document.getElementById(errorLabelId);
-    input.style.color = '';
+    input.classList.remove('orange');
     errorLabel.textContent = '';
-    input.style.borderBottomColor = '';
+    input.classList.remove('orange-border');
     input.classList.remove('error');
 }
 
 function showErrorInn(errorLabelId) {
     const errorLabel = document.getElementById(errorLabelId);
-    errorLabel.style.color = '#F55123';
+    errorLabel.classList.add('orange');
 }
 
 function clearErrorInn(errorLabelId) {
     const errorLabel = document.getElementById(errorLabelId);
-    errorLabel.style.color = '';
+    errorLabel.classList.remove('orange');
 }
 
 function isFormValid() {

@@ -192,11 +192,7 @@
     line-height: 1.23; 
 }
 
-.tab:hover {
-    border: 2px solid var(--system-magenta-color);
-}
-
-.tab-active {
+.tab:hover , .tab-active  {
     border: 2px solid var(--system-magenta-color);
 }
 

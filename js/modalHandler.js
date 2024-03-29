@@ -1,28 +1,28 @@
 // модальные окна
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
-    modal.style.display = "flex";
+    modal.classList.add('display-block');
     const overlay = document.getElementById("overlay");
-    overlay.style.display = "flex";
+    overlay.classList.add('display-block');
 }
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
-    modal.style.display = "none";
+    modal.classList.remove('display-block');
     const overlay = document.getElementById("overlay");
-    overlay.style.display = "none";
+    overlay.classList.remove('display-block');
 }
 
 // добавление слушателя событий на кнопки модальных окон
 function addButtonEventListener(buttonId, modalId) {
     const button = document.getElementById(buttonId);
-    button.addEventListener("click", function() {
+    button.addEventListener("click", () => {
         openModal(modalId);
     });
 }
 
 function addCloseButtonEventListener(buttonId, modalId) {
     const button = document.getElementById(buttonId);
-    button.addEventListener("click", function() {
+    button.addEventListener("click", () => {
         closeModal(modalId);
     });
 }
@@ -39,14 +39,17 @@ addCloseButtonEventListener("modalPayCloseBottom", "modalPay");
 
 openTab('tab1');
 
-// таб
+// таб 
 function openTab(tabId) {
     const tabContents = document.querySelectorAll('.tab-content');
     tabContents.forEach(tabContent => {
-        tabContent.style.display = 'none';
+        tabContent.classList.add('display-none');
+        tabContent.classList.remove('display-flex');
     });
     const selectedTab = document.getElementById(tabId);
-    selectedTab.style.display = 'flex';
+    selectedTab.classList.add('display-flex');
+    selectedTab.classList.remove('display-none');
+
     const tabs = document.querySelectorAll('.tab');
     tabs.forEach(tab => {
         tab.classList.remove('tab-active');
@@ -56,11 +59,11 @@ function openTab(tabId) {
 }
 
 const openTab1 = document.getElementById("opentab1");
-openTab1.addEventListener("click", function() {
+openTab1.addEventListener("click", () => {
     openTab("tab1");
 });
 
 const openTab2 = document.getElementById("opentab2");
-openTab2.addEventListener("click", function() {
+openTab2.addEventListener("click", () => {
     openTab("tab2");
 });

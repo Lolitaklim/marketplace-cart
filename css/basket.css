@@ -319,28 +319,29 @@
     gap: 16px;
 }
 
-.hearth {
+.action-icon {
     width: 20px;
     height: 20px;
-    background-image: url(/img/hearth.svg);
     border: none;
     background-color: transparent;
     cursor: pointer;
     transition: 0.3s ease;
+}
+
+.hearth {
+    background-image: url(/img/hearth.svg);
 }
 
 .hearth:hover {
     background-image: url(/img/hearth-hover.svg);
 }
 
+.hearth_active {
+    background-image: url(/img/hearth-active.svg);
+}
+
 .delete {
-    width: 20px;
-    height: 20px;
     background-image: url(/img/delete.svg);
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
-    transition: 0.3s ease;
 }
 
 .delete:hover {
@@ -435,7 +436,6 @@
 
 .basket__soldout {
     z-index: 1;
-    display: flex;
     position: relative;
 }
 
