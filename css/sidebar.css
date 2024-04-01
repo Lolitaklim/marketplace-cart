@@ -187,6 +187,12 @@
     background: rgba(161, 17, 137, 1);
 }
 
+.btn__to-order:disabled {
+    background: rgba(246, 246, 250, 1);
+    color: rgba(0, 0, 0, 0.5);
+    cursor: not-allowed;
+}
+
 .btn__description {
     display: flex;
     align-items: flex-start;

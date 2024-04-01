@@ -106,6 +106,31 @@ function showCartCounter () {
     cartCounter.classList.remove('display-none');
 }
 
+// чекбокс списать оплату сразу
+const checkboxPay = document.getElementById('checkbox-pay');
+const submitButton = document.getElementById('submit-button');
+const costHeaderRight = document.querySelector('.cost-header-number');
+const paymentTextSidebar = document.querySelector('.sidebar-payment-description');
+const paymentTextPlacing = document.querySelector('.payment__description');
+
+function calcSubmitBtn() {
+    submitButton.disabled = false;
+    const isChecked = checkboxPay.checked;
+    submitButton.textContent = isChecked ? 'Оплатить ' + costHeaderRight.textContent + ' сом' : 'Заказать'; 
+    if(costHeaderRight.textContent == 0) {
+        submitButton.textContent = 'Заказать';
+        submitButton.disabled = true;
+    }
+}
+
+checkboxPay.addEventListener('change', () => {
+    calcSubmitBtn();
+    const isChecked = checkboxPay.checked;
+    paymentTextSidebar.classList.toggle('display-none', isChecked);
+    paymentTextPlacing.classList.toggle('display-none', isChecked);
+});
+
+
 
 // чекбоксы товаров
 const mainCheckbox = document.getElementById('checkbox-choose');
@@ -124,39 +149,34 @@ mainCheckbox.addEventListener('change', () => {
             const priceDig = itemGood.querySelector('.price-new__digit');
             totalCost += parseInt(removeSpaces(priceDig.textContent));
         })
-        showCartCounter ();
+        showCartCounter();
+        
         costHeader.textContent = formatNum(totalCost) + ' ';
         costHeaderNoSale.textContent = formatNum(Math.floor(totalCost * 1.9)) + ' сом';
         costHeaderSale.textContent = '−' + formatNum(Math.floor(totalCost * 0.1)) + ' сом';
+        calcSubmitBtn();
         if(!totalCost) {
-            hideCartCounter ();
+            costHeader.textContent = 0;
+            hideCartCounter();
+            calcSubmitBtn();
         }            
     } else {
         subCheckboxes.forEach(checkbox => {
             checkbox.checked = false;
         });
-        hideCartCounter ();
+        costHeader.textContent = 0;
+        hideCartCounter();
+        calcSubmitBtn();
     }
 });
 subCheckboxes.forEach(checkbox => {
     checkbox.addEventListener('change', () => {
         const allChecked = Array.from(subCheckboxes).every(checkbox => checkbox.checked);
         mainCheckbox.checked = allChecked;
+        calcSubmitBtn();
     });
 });
 
-// чекбокс списать оплату сразу
-const checkboxPay = document.getElementById('checkbox-pay');
-const submitButton = document.getElementById('submit-button');
-const costHeaderRight = document.querySelector('.cost-header-number');
-const paymentTextSidebar = document.querySelector('.sidebar-payment-description');
-const paymentTextPlacing = document.querySelector('.payment__description');
-checkboxPay.addEventListener('change', () => {
-    const isChecked = checkboxPay.checked;
-    paymentTextSidebar.classList.toggle('display-none', isChecked);
-    paymentTextPlacing.classList.toggle('display-none', isChecked);
-    submitButton.textContent = isChecked ? 'Оплатить ' + costHeaderRight.textContent + 'сом' : 'Заказать'; 
-});
 
 // удаление в модалке
 const deleteBtn = document.querySelectorAll('.tab-item-courrier .delete');

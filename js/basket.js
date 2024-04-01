@@ -102,7 +102,11 @@ itemGoods.forEach(itemGood => {
         costHeader.textContent = formatNum(totalCost) + ' ';
         costHeaderNoSale.textContent = formatNum(Math.floor(totalCost * 1.9)) + ' сом';
         costHeaderSale.textContent = '−' + formatNum(Math.floor(totalCost * 0.1)) + ' сом';
+        calcSubmitBtn();
         if(!totalCost) {
+            costHeader.textContent = 0;
+            
+            calcSubmitBtn();
             hideCartCounter ();
         }
         const amountAllCreate = document.querySelector('.amount-all');
