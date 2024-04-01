@@ -37,6 +37,8 @@ addButtonEventListener("modalPaySidebar", "modalPay");
 addCloseButtonEventListener("modalPayCloseTop", "modalPay");
 addCloseButtonEventListener("modalPayCloseBottom", "modalPay");
 
+const radioBtnTab = document.querySelectorAll('.radio-btn-tab');
+
 openTab('tab1');
 
 // таб 
@@ -56,6 +58,10 @@ function openTab(tabId) {
     });
     const activeTab = document.getElementById(`open${tabId}`);
     activeTab.classList.add('tab-active');
+    
+    radioBtnTab.forEach(function(button) {
+        button.checked = false;
+    });
 }
 
 const openTab1 = document.getElementById("opentab1");

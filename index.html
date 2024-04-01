@@ -53,7 +53,8 @@
         <div class="content">
             <div class="basket">
                 <h1 class="basket__header bold">Корзина</h1>
-                <div class="accordion">
+                <p id="emptyCard" class="display-none semi-bold">В корзине пока пусто</p>
+                <div class="accordion" id="accordionGoods">
                     <div class="accordion__choose">
                         <input class="checkbox-label checkbox-label-choose" id="checkbox-choose" type="checkbox" checked>
                         <label class="label-checkbox accordion__header" for="checkbox-choose">Выбрать все</label>
@@ -201,7 +202,7 @@
                             <div class="soldout__right">
                                 <div class="remainder__icons remainder__icons-mob">
                                     <button class="action-icon hearth"></button>
-                                    <button class="action-icon delete"></button>
+                                    <button class="action-icon delete solduot__delete"></button>
                                 </div>
                             </div>
                         </div>
@@ -226,33 +227,33 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="delivery__item">
+                            <div class="delivery__item" >
                                 <span class="delivery__item-header semi-bold">Стоимость доставки</span>
                                 <span class="delivery__item-cost">Бесплатно</span>
                             </div>
-                            <div class="delivery__item">
+                            <div class="delivery__item" id="delivery">
                                 <span class="delivery__item-header semi-bold">5—6 февраля</span>
                                 <div class="delivery__item-goods">
-                                    <div class="item-goods__good">
+                                    <div class="item-goods__good" id="item_1">
                                         <img class="item1 item-goods__good-img" src="/img/content/tshirt.png" alt="">
                                         <span id="item-1" class=" item-goods__good-label"></span>
                                     </div>
-                                    <div class="item-goods__good">
+                                    <div class="item-goods__good" id="item_2">
                                         <img class="item2 item-goods__good-img" src="/img/content/case.png" alt="">
-                                        <span  class=" item-goods__good-label">184</span>
+                                        <span id="item-2" class="item-goods__good-label">184</span>
                                     </div>
-                                    <div class="item-goods__good">
+                                    <div class="item-goods__good" id="item_3">
                                         <img class="item3 item-goods__good-img" src="/img/content/pencils.png" alt="">
                                         <span id="item-3" class=" item-goods__good-label">2</span>
                                     </div>
                                 </div>
                             </div>
-                            <div class="delivery__item">
+                            <div class="delivery__item" id="delivery-other">
                                 <span class="delivery__item-header semi-bold">7—8 февраля</span>
                                 <div class="delivery__item-goods">
                                     <div class="item-goods__good" >
                                         <img class="item2 item-goods__good-img" src="/img/content/case.png" alt="">
-                                        <span id="item-2" class="item2 item-goods__good-label">16</span>
+                                        <span id="item-4" class="item2 item-goods__good-label">16</span>
                                     </div>
                                 </div>
                             </div>
@@ -323,7 +324,7 @@
                     </div>
                     <div class="cost-list">
                         <div class="cost-item">
-                            <span><span class="amount-all">203</span> товара</span>
+                            <span class="amount-all">203 товара</span>
                             <span class="cost-no-sale">2 302 048 сом</span>
                         </div>
                         <div class="cost-item">
@@ -474,31 +475,31 @@
                     Мои адреса
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="courrier1" name="tab-courrier">
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="courrier1" name="tab-courrier">
                     <label class="card-item-btn-label" for="courrier1">
-                        <span class="tab-label-courrier">
+                        <span class="tab-label-courrier tab-point-courrier">
                             Бишкек, улица Табышалиева, 57
                         </span>
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon  delete"></button>
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="courrier2" name="tab-courrier">
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="courrier2" name="tab-courrier">
                     <label class="card-item-btn-label" for="courrier2">
-                        <span class="tab-label-courrier">
+                        <span class="tab-label-courrier tab-point-courrier">
                             Бишкек, улица Жукеева-Пудовкина, 77/1
                         </span>
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon  delete"></button>
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="courrier3" name="tab-courrier">
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="courrier3" name="tab-courrier">
                     <label class="card-item-btn-label" for="courrier3">
-                        <span class="tab-label-courrier">
+                        <span class="tab-label-courrier tab-point-courrier">
                             Бишкек, микрорайон Джал, улица Ахунбаева Исы, 67/1
                         </span>
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon  delete"></button>
                 </div>
             </div>
 
@@ -507,7 +508,7 @@
                     Мои адреса
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="point1" name="tab-point" >
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="point1" name="tab-point" >
                     <label class="card-item-btn-label item-btn-courrier" for="point1">
                         <div class="tab-label-courrier">
                             <span class="tab-point-select">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span>
@@ -516,10 +517,10 @@
                             </div>
                         </div>
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon delete"></button>
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="point2" name="tab-point" >
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="point2" name="tab-point" >
                     <label class="card-item-btn-label item-btn-courrier" for="point2">
                         <div class="tab-label-courrier">
                             <span class="tab-point-select">г. Бишкек, микрорайон Джал, улица Ахунбаева Исы, д. 67/1</span> 
@@ -529,10 +530,10 @@
                         </div>
                         
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon delete"></button>
                 </div>
                 <div class="tab-item-courrier">
-                    <input type="radio" class="card-item-btn" id="point3" name="tab-point" >
+                    <input type="radio" class="card-item-btn radio-btn-tab" id="point3" name="tab-point" >
                     <label class="card-item-btn-label item-btn-courrier" for="point3">
                         <div class="tab-label-courrier">
                             <span class="tab-point-select">г. Бишкек, улица Табышалиева, д. 57</span>
@@ -541,7 +542,7 @@
                             </div>
                         </div>
                     </label>
-                    <button class="delete"></button>
+                    <button class="action-icon delete"></button>
                 </div>
             </div>
         </div>

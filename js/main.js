@@ -17,7 +17,7 @@ accordionBtn.addEventListener('click', ()  => {
 });
 
 // тултипы поверх hidden
-// const icon = document.querySelector('.icon-i');
+const icon = document.querySelector('.icon-i');
 // const tooltip = document.querySelector('.tooltip');
 // icon.addEventListener('mouseover', function () {
 //     tooltip.classList.remove('tooltip-hidden');
@@ -192,15 +192,29 @@ deleteBtn.forEach((button) => {
 const selectBtn = document.querySelector('.select-point');
 const pointAddrSidebar = document.querySelector('.point__addr-sidebar');
 const pointAddr = document.querySelector('.point__addr');
+const deliveryHeader = document.querySelector('.delivery__item-header-point');
+const sidebarHeader = document.querySelector('.point__header-sidebar');
+
 selectBtn.addEventListener('click', () => {
     const selectedPoint = document.querySelector('input[name="tab-point"]:checked');
+    const selectedCourrier = document.querySelector('input[name="tab-courrier"]:checked');
+    
     if (selectedPoint) {
-        const cardNumber = selectedPoint.nextElementSibling.querySelector('.tab-point-select').textContent;
-        pointAddrSidebar.textContent = cardNumber;
-        pointAddr.textContent = cardNumber;
+        const selected = selectedPoint.nextElementSibling.querySelector('.tab-point-select').textContent;
+        pointAddrSidebar.textContent = selected;
+        pointAddr.textContent = selected;
+        deliveryHeader.textContent = 'Пункт выдачи';
+        sidebarHeader.textContent = 'Доставка в пункт выдачи';
+    } 
+
+    if (selectedCourrier) {
+        const selected = selectedCourrier.nextElementSibling.querySelector('.tab-point-courrier').textContent;
+        pointAddrSidebar.textContent = selected;
+        pointAddr.textContent = selected;
+        deliveryHeader.textContent = 'Доставка курьером';
+        sidebarHeader.textContent = 'Доставка курьером';
     } 
 });
-
 
 // перенос слов с дефисами на новою строку в названиях товаров
 window.addEventListener("load", preventHyphenation);
