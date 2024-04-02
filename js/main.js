@@ -16,15 +16,7 @@ accordionBtn.addEventListener('click', ()  => {
     }
 });
 
-// тултипы поверх hidden
 const icon = document.querySelector('.icon-i');
-// const tooltip = document.querySelector('.tooltip');
-// icon.addEventListener('mouseover', function () {
-//     tooltip.classList.remove('tooltip-hidden');
-// });
-// icon.addEventListener('mouseout', function () {
-//     tooltip.classList.add('tooltip-hidden');
-// });
 
 // избранное у товаров
 const hearths = document.querySelectorAll('.hearth');

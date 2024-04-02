@@ -5,6 +5,7 @@
     --system-orange-color: rgba(245, 81, 35, 1);
     --system-gray-color: rgba(151, 151, 175, 1);
     --system-green-color: rgba(12, 180, 119, 1);
+    --system-smoky-dark-color: rgba(240, 236, 244, 1);
 }
 
 .gray {
@@ -15,10 +16,12 @@
     box-sizing: border-box;
 }
 
+
 body {
     background: var(--system-violet-color);
     font-family: 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
+    width: 100%;
 }
 
 .container {

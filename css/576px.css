@@ -34,3 +34,16 @@
     
 
 }
+
+@media (max-width: 448px) {
+    .tooltip-free-delivery {
+        left: 0px;
+    }
+}
+
+@media (max-width: 368px) {
+    .tooltip-free-delivery {
+        left: -60px;
+        width: 150px;
+    }
+}

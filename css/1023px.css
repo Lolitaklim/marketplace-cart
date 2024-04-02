@@ -4,6 +4,7 @@
     .container {
         max-width: 1024px;
         min-width: 320px;
+        width: 100%;
     }
     
     .header__container {
@@ -32,9 +33,9 @@
     }
     
     .logo {
-        width: 198px;
+        width: 200px;
         font-size: 28px;
-        line-height: 0;
+        line-height: 18px;
         letter-spacing: 1.5px;
         word-spacing: 1.4px;
     }
@@ -76,6 +77,7 @@
     .basket__header {
         font-size: 20px;
         padding-bottom: 9px;
+        line-height: 28px; 
     }
     
     .accordion {
@@ -154,11 +156,10 @@
     
     .price-new__digit_mini {
         font-size: 15px;
-       line-height: 1.3;
     }
     
     .list-item__price-sale {
-        line-height: 1.9;
+        line-height: 22px;
         text-decoration-thickness: 0.9px;
     }
     
@@ -168,7 +169,7 @@
 
     .goods-info__title {
         font-size: 14px;
-        line-height: 1.42;
+        line-height: 20px;
         width: 100%;
         min-width: 203px;
         overflow: hidden;
@@ -290,6 +291,7 @@
     
     .placing__header {
         font-size: 20px;
+        line-height: 24px;
     }
     
     .delivery__list {
@@ -306,7 +308,7 @@
     }
     
     .point__addr {
-        line-height: 1.4;
+        line-height: 22px;
         font-size: 16px;
     }
     
@@ -317,6 +319,14 @@
     .delivery__return {
         padding-left: 8px;
         padding-right: 12px;
+    }
+
+    .tooltip-free {
+        width: 283px;
+    }
+    
+    .tooltip-free-delivery {
+        left: -228px;
     }
     
     .payment__content {
@@ -350,8 +360,11 @@
         top: -16px;
     }
     
+    .userdata__input {
+        line-height: 28px;
+    }
     .userdata__label-bottom {
-        line-height: 2;
+        line-height: 16px;
         letter-spacing: 0;
         word-spacing: 0px;
     }
@@ -389,8 +402,15 @@
     .sidebar-payment-top {
         display: none;
     }
+
+    .sidebar-delivery__return {
+        background: var( --system-smoky-dark-color);
+        border-radius: 8px;
+    }
     
     .sidebar-payment-bottom {
+        background: var( --system-smoky-dark-color);
+        border-radius: 8px;
         padding: 6px 8px 12px 8px;
     }
     
@@ -399,6 +419,7 @@
     }
 
     .tabbar-mob {
+        z-index: 4;
         display: flex;
         width: 100%;
         height: 56px;
@@ -444,7 +465,7 @@
         color: var(--system-white-color);
         text-align: center;
         font-size: 10px;
-        line-height: 1.6; 
+        line-height: 16px; 
         bottom: 16px;
         left: 17px;
         padding: 0 6px;

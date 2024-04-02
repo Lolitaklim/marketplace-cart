@@ -40,11 +40,12 @@
     width: 108px;
     color: var(--system-white-color);
     font-size: 30px;
-    line-height: 0.79;
+    line-height: 24px;
     font-variant: all-small-caps;
     margin: 0;
     letter-spacing: 1.7px;
     word-spacing: 1.4px;
+    cursor: pointer;
 }
 
 .search {
@@ -104,6 +105,7 @@
     align-items: center;
     gap: 5px;
     position: relative;
+    cursor: pointer;
 }
 
 .navbar__icon {
@@ -128,7 +130,7 @@
     color: var(--system-white-color);
     text-align: center;
     font-size: 10px;
-    line-height: 1.6; 
+    line-height: 15px; 
     bottom: 40px;
     left: 32px;
     padding: 0 5px;
