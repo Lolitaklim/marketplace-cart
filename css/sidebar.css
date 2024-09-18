@@ -78,7 +78,7 @@
 .edit-btn {
   width: 20px;
   height: 20px;
-  background-image: url(./img/pencil.svg);
+  background-image: url(./../img/pencil.svg);
   border: none;
   background-color: transparent;
   cursor: pointer;

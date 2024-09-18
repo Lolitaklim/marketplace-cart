@@ -22,7 +22,7 @@
     padding: 0;
     width: 28px;
     height: 28px;
-    background-image: url(./img/burger-mini.svg);
+    background-image: url(./../img/burger-mini.svg);
   }
 
   .header__logo {
@@ -45,7 +45,7 @@
   .search-btn {
     top: -14px;
     right: 3px;
-    background-image: url(./img/search-w.svg);
+    background-image: url(./../img/search-w.svg);
   }
 
   .navbar {
@@ -443,15 +443,15 @@
   }
 
   .main-svg {
-    background-image: url(./img/main.svg);
+    background-image: url(./../img/main.svg);
   }
 
   .catalog-svg {
-    background-image: url(./img/catalog.svg);
+    background-image: url(./../img/catalog.svg);
   }
 
   .cart-svg {
-    background-image: url(./img/cart-mob.svg);
+    background-image: url(./../img/cart-mob.svg);
   }
 
   .tabbar__label {
@@ -469,11 +469,11 @@
   }
 
   .favorites-svg {
-    background-image: url(./img/favorites.svg);
+    background-image: url(./../img/favorites.svg);
   }
 
   .profile-svg {
-    background-image: url(./img/profile-mob.svg);
+    background-image: url(./../img/profile-mob.svg);
   }
 
   .tab-label-courrier {

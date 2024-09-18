@@ -53,7 +53,7 @@
 .checkbox-label:checked + .label-checkbox::before {
   width: 22px;
   height: 22px;
-  background-image: url(./img/checkbox.svg);
+  background-image: url(./../img/checkbox.svg);
   border: none;
 }
 
@@ -95,7 +95,7 @@
 .hide-btn {
   width: 20px;
   height: 20px;
-  background-image: url(./img/hidebtn.svg);
+  background-image: url(./../img/hidebtn.svg);
   border: none;
   background-color: transparent;
   background-repeat: no-repeat;
@@ -216,7 +216,7 @@
   display: inline-block;
   width: 20px;
   height: 20px;
-  background-image: url(./img/icon-i.svg);
+  background-image: url(./../img/icon-i.svg);
   cursor: pointer;
   position: relative;
 }
@@ -334,23 +334,23 @@
 }
 
 .hearth {
-  background-image: url(./img/hearth.svg);
+  background-image: url(./../img/hearth.svg);
 }
 
 .hearth:hover {
-  background-image: url(./img/hearth-hover.svg);
+  background-image: url(./../img/hearth-hover.svg);
 }
 
 .hearth_active {
-  background-image: url(./img/hearth-active.svg);
+  background-image: url(./../img/hearth-active.svg);
 }
 
 .delete {
-  background-image: url(./img/delete.svg);
+  background-image: url(./../img/delete.svg);
 }
 
 .delete:hover {
-  background-image: url(./img/delete-hover.svg);
+  background-image: url(./../img/delete-hover.svg);
 }
 
 .list-item__price {

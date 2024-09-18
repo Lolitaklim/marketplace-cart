@@ -38,7 +38,7 @@
   align-self: stretch;
   width: 24px;
   height: 24px;
-  background-image: url(./img/modal-exit.svg);
+  background-image: url(./../img/modal-exit.svg);
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -91,7 +91,7 @@
 .card-item-btn:checked + .card-item-btn-label::before {
   width: 20px;
   height: 20px;
-  background-image: url(./img/radio-btn.svg);
+  background-image: url(./../img/radio-btn.svg);
   border: none;
   margin-left: 0px;
 }
