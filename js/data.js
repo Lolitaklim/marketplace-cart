@@ -1,7 +1,7 @@
 const dataArr = [
   {
     id: 'item1',
-    img: './../img/content/tshirt.png',
+    img: './img/content/tshirt.png',
     price: 522,
     sale: 783,
     title: 'Футболка UZcotton мужская',
@@ -19,7 +19,7 @@ const dataArr = [
   },
   {
     id: 'item2',
-    img: './../img/content/case.png',
+    img: './img/content/case.png',
     price: '2 100 047',
     sale: '3 150 070',
     title:
@@ -38,7 +38,7 @@ const dataArr = [
   },
   {
     id: 'item3',
-    img: './../img/content/pencils.png',
+    img: './img/content/pencils.png',
     price: 494,
     sale: 741,
     title:
