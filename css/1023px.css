@@ -1,488 +1,482 @@
-
 @media (max-width: 1023px) {
+  .container {
+    max-width: 1024px;
+    min-width: 320px;
+    width: 100%;
+  }
 
-    .container {
-        max-width: 1024px;
-        min-width: 320px;
-        width: 100%;
-    }
-    
-    .header__container {
-        padding: 14px 14px 14px 16px;
-        gap: 16px;
-    }
-    
-    .header__catalog-logo{
-        width: 100%;
-        align-items: center;
-        gap: 17px;
-    }
-    
-    .catalog-btn {
-        border-radius: 0;
-        border: none;
-        padding: 0;
-        width: 28px;
-        height: 28px;
-        background-image: url(/img/burger-mini.svg);
-    }
-    
-    .header__logo {
-        width: 100%;
-        padding: 0px 1px 10px 5px;        
-    }
-    
-    .logo {
-        width: 200px;
-        font-size: 28px;
-        line-height: 18px;
-        letter-spacing: 1.5px;
-        word-spacing: 1.4px;
-    }
-    
-    .search__input {
-        display: none;
-    }
-  
-    .search-btn {
-        top: -14px;
-        right: 3px;
-        background-image: url(/img/search-w.svg);
-    }
+  .header__container {
+    padding: 14px 14px 14px 16px;
+    gap: 16px;
+  }
 
-    .navbar {
-        display: none;
-    }
+  .header__catalog-logo {
+    width: 100%;
+    align-items: center;
+    gap: 17px;
+  }
 
-    .main-container {
-        gap: 16px;
-        padding: 16px 0px 24px 0px;
-        flex-direction: column;
-    }
-    
-    .content {
-        max-width: none;
-        padding-top: 0px;
-        padding-bottom: 0px;
-        gap: 32px; 
-    }
-    
-    .basket {
-        gap: 9px;
-        min-width: 270px;
-        margin-left: 16px;
-        margin-right: 16px;
-    }
-    
-    .basket__header {
-        font-size: 20px;
-        padding-bottom: 9px;
-        line-height: 28px; 
-    }
-    
-    .accordion {
-        padding-bottom: 5px;
-        border-bottom: none;
+  .catalog-btn {
+    border-radius: 0;
+    border: none;
+    padding: 0;
+    width: 28px;
+    height: 28px;
+    background-image: url(./img/burger-mini.svg);
+  }
 
-    }
+  .header__logo {
+    width: 100%;
+    padding: 0px 1px 10px 5px;
+  }
 
-    .accordion__hide-btn {
-        padding-right: 4px;
-    }
-    
-    .basket__list {
-        border-top: none;
-        gap: 15px;
-    }
+  .logo {
+    width: 200px;
+    font-size: 28px;
+    line-height: 18px;
+    letter-spacing: 1.5px;
+    word-spacing: 1.4px;
+  }
 
-    .solduot__list-item:first-child {
-        border-top:none; 
-    }
+  .search__input {
+    display: none;
+  }
 
-    .list-item {
-        flex-direction: column;
-        border-top: 1px solid rgba(0, 0, 0, 0.10);
-        padding-bottom: 0px;
-    }
+  .search-btn {
+    top: -14px;
+    right: 3px;
+    background-image: url(./img/search-w.svg);
+  }
 
-    .list-item:first-child {
-        border-top:none; 
-    }
-    
-    .list-item__goods {
-        padding-top: 12px;
-    }
-    
-    .list-item__goods-img {
-        gap: 0;
-    }
-    
-    .goods-img__checkbox {
-        position: relative;
-    }
+  .navbar {
+    display: none;
+  }
 
-    .checkbox-mob {
-        position: absolute;
-        top: 4px;
-        left: 4px;
-    }
-    
-    .content-img {
-        width: 80px;
-        height: 106px;
-    }
-    
-    .list-item__goods-info {
-        padding-top: 2px;
-        gap: 0px;
-    }
+  .main-container {
+    gap: 16px;
+    padding: 16px 0px 24px 0px;
+    flex-direction: column;
+  }
 
-    .list-item__price_mobile {
-        display: flex;
-        gap: 5px;
-        flex: 1 0 0;
-        display: flex;
-        align-items: baseline;
-    }
-    
-    .list-item__price-new {
-        gap: 5px 
-    }
-    
-    .price-new__digit {
-        font-size: 16px;
-        letter-spacing: 0;
-    }
-    
-    .price-new__digit_mini {
-        font-size: 15px;
-    }
-    
-    .list-item__price-sale {
-        line-height: 22px;
-        text-decoration-thickness: 0.9px;
-    }
-    
-    .list-item__price-sale::before {
-        bottom: 10px;
-    }
+  .content {
+    max-width: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    gap: 32px;
+  }
 
-    .goods-info__title {
-        font-size: 14px;
-        line-height: 20px;
-        width: 100%;
-        min-width: 203px;
-        overflow: hidden;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-    }
-    
-    .nowrap {
-        white-space: wrap;
-    }
-    
-    .goods-info__properties {
-        padding-top: 8px;
-    }
+  .basket {
+    gap: 9px;
+    min-width: 270px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
 
-    .comstore {
-        padding-top: 7px;
-    }
-    
-    .comstore__company {
-        display: none;
-    }
-    
-    .list-item__right {
-        display: block;
-        width: 100%;        
-    }
-    
-    .list-item__remainder {
-        flex-direction: row;
-        align-items: center;
-        padding-top: 5px;
-        gap: 17px;
-        justify-content: space-between;
-    }
-    
-    .counter {
-        border-radius: 4px;
-        padding: 3px 6px 6px 9px; 
-        width: 80px;
-    }
-    
-    .counter__count {
-        min-width: 39px;
-        font-size: 15px;
-        padding-top: 1px;
-    }
-    
-    .remainder-alert {
-        width: 100%;
-        flex: 1;
-    }
-    
-    .remainder__icons {
-        gap: 24px;
-        padding-right: 12px;
-    }
+  .basket__header {
+    font-size: 20px;
+    padding-bottom: 9px;
+    line-height: 28px;
+  }
 
-    .remainder-alert {
-       
-        align-self: center;
-    }
-    
-    .list-item__price {
-        display: none;
-    }
+  .accordion {
+    padding-bottom: 5px;
+    border-bottom: none;
+  }
 
-    .solduot__header {
-        margin-top: 18px;
-        padding-bottom: 3px;
-        margin-bottom: 6px;
-    }
-    
-    .list-item-mob {
-        margin-bottom: 1px;
-    }
+  .accordion__hide-btn {
+    padding-right: 4px;
+  }
 
-    .goods-info__title_width {
-        width: 100%;
-        min-width: 192px;
-    }
-    
-    .content-img_soldout {
-        filter: grayscale(100%);
-    }
-    
-    .list-item__right-mob {
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-end;
-    }
-   
-    .soldout__right {
-        padding-top: 9px;
-    }
-    
-    .remainder__icons-mob {
-        padding-right: 4px;
-    }
-    
-    .placing {
-        min-width: unset;
-        gap: 12px;
-    }
-    
-    .placing__item {
-        padding: 16px 10px 24px 16px; 
-    }
-    
-    .delivery {
-        gap: 25px;
-    }
-    
-    .delivery__method {
-        gap: 8px;
-    }
-    
-    .placing__header {
-        font-size: 20px;
-        line-height: 24px;
-    }
-    
-    .delivery__list {
-        gap: 16px;
-    }
-    
-    .delivery__item {
-        flex-direction: column;
-        gap: 2px;
-    }
+  .basket__list {
+    border-top: none;
+    gap: 15px;
+  }
 
-    .delivery__item:last-child {
-        padding-top: 8px;
-    }
-    
-    .point__addr {
-        line-height: 22px;
-        font-size: 16px;
-    }
-    
-    .delivery__item-goods {
-        padding-top: 9px;
-    }
-    
-    .delivery__return {
-        padding-left: 8px;
-        padding-right: 12px;
-    }
+  .solduot__list-item:first-child {
+    border-top: none;
+  }
 
-    .tooltip-free {
-        width: 283px;
-    }
-    
-    .tooltip-free-delivery {
-        left: -228px;
-    }
-    
-    .payment__content {
-        gap: 8px;
-    }
-    
-    .recepient {
-        padding: 16px 16px 16px 15px;
-        gap: 23px;
-    }
-    
-    .recepient__list {
-        gap: 45px;
-        flex-direction: column;
-    }
-    
-    .recepient__userdata {
-        max-width: 350px;
-    }
-    
-    .recepient__userdata_top {
-        width: unset;
-    }
-    
-    .recepient__userdata_bottom {
-        width: unset;
-    }
-    
-    .userdata__label-top {
-        font-size: 12px;
-        top: -16px;
-    }
-    
-    .userdata__input {
-        line-height: 28px;
-    }
-    .userdata__label-bottom {
-        line-height: 16px;
-        letter-spacing: 0;
-        word-spacing: 0px;
-    }
-    
-    .sidebar {
-        background: unset;
-        box-shadow: unset;
-        padding: 10px 16px 16px 16px;
-        gap: 20px;
-        width: 100%;
-    }
-    
-    .sidebar__content {
-        gap: 16px;
-        width: 100%;
-    }
-    
-    .cost {
-        gap: 7px;
-    }
-    
-    .cost-header {
-        font-size: 20px;
-    }
-    
-    .cost-header-right {
-        font-size: 20px;
-        letter-spacing: -0.2px;
-    }
-    
-    .sidebar-delivery__point {
-        display: none;
-    }
-    
-    .sidebar-payment-top {
-        display: none;
-    }
+  .list-item {
+    flex-direction: column;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 0px;
+  }
 
-    .sidebar-delivery__return {
-        background: var( --system-smoky-dark-color);
-        border-radius: 8px;
-    }
-    
-    .sidebar-payment-bottom {
-        background: var( --system-smoky-dark-color);
-        border-radius: 8px;
-        padding: 6px 8px 12px 8px;
-    }
-    
-    .footer-container {
-        padding-bottom: 56px;
-    }
+  .list-item:first-child {
+    border-top: none;
+  }
 
-    .tabbar-mob {
-        z-index: 4;
-        display: flex;
-        width: 100%;
-        height: 56px;
-        padding: 0px 13px;
-        justify-content: space-between;
-        align-items: center;
-        background: var(--system-white-color);
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.30);
-        backdrop-filter: blur(2.5px);
-    }
+  .list-item__goods {
+    padding-top: 12px;
+  }
 
-    .tabbar__link {
-        padding: 12px 0px;
-        width: 28px;
-    }
+  .list-item__goods-img {
+    gap: 0;
+  }
 
-    .tabbar__icon {
-        display: block;
-        width: 28px;
-        height: 28px;
-        position: relative;
-    }
+  .goods-img__checkbox {
+    position: relative;
+  }
 
-    .main-svg {
-        background-image: url(/img/main.svg);
-    }
+  .checkbox-mob {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+  }
 
-    .catalog-svg {
-        background-image: url(/img/catalog.svg);
-    }
+  .content-img {
+    width: 80px;
+    height: 106px;
+  }
 
-    .cart-svg {
-        background-image: url(/img/cart-mob.svg);
-    }
+  .list-item__goods-info {
+    padding-top: 2px;
+    gap: 0px;
+  }
 
-    .tabbar__label {
-        position: absolute;
-        border-radius: 16px;
-        background: var(--system-orange-color);
-        color: var(--system-white-color);
-        text-align: center;
-        font-size: 10px;
-        line-height: 16px; 
-        bottom: 16px;
-        left: 17px;
-        padding: 0 6px;
-        white-space: nowrap;
-    }
+  .list-item__price_mobile {
+    display: flex;
+    gap: 5px;
+    flex: 1 0 0;
+    display: flex;
+    align-items: baseline;
+  }
 
-    .favorites-svg {
-        background-image: url(/img/favorites.svg);
-    }
+  .list-item__price-new {
+    gap: 5px;
+  }
 
-    .profile-svg {
-        background-image: url(/img/profile-mob.svg);
-    }
+  .price-new__digit {
+    font-size: 16px;
+    letter-spacing: 0;
+  }
 
-    .tab-label-courrier {
-       
-        width: unset;
-    }
+  .price-new__digit_mini {
+    font-size: 15px;
+  }
 
+  .list-item__price-sale {
+    line-height: 22px;
+    text-decoration-thickness: 0.9px;
+  }
+
+  .list-item__price-sale::before {
+    bottom: 10px;
+  }
+
+  .goods-info__title {
+    font-size: 14px;
+    line-height: 20px;
+    width: 100%;
+    min-width: 203px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+  }
+
+  .nowrap {
+    white-space: wrap;
+  }
+
+  .goods-info__properties {
+    padding-top: 8px;
+  }
+
+  .comstore {
+    padding-top: 7px;
+  }
+
+  .comstore__company {
+    display: none;
+  }
+
+  .list-item__right {
+    display: block;
+    width: 100%;
+  }
+
+  .list-item__remainder {
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5px;
+    gap: 17px;
+    justify-content: space-between;
+  }
+
+  .counter {
+    border-radius: 4px;
+    padding: 3px 6px 6px 9px;
+    width: 80px;
+  }
+
+  .counter__count {
+    min-width: 39px;
+    font-size: 15px;
+    padding-top: 1px;
+  }
+
+  .remainder-alert {
+    width: 100%;
+    flex: 1;
+  }
+
+  .remainder__icons {
+    gap: 24px;
+    padding-right: 12px;
+  }
+
+  .remainder-alert {
+    align-self: center;
+  }
+
+  .list-item__price {
+    display: none;
+  }
+
+  .solduot__header {
+    margin-top: 18px;
+    padding-bottom: 3px;
+    margin-bottom: 6px;
+  }
+
+  .list-item-mob {
+    margin-bottom: 1px;
+  }
+
+  .goods-info__title_width {
+    width: 100%;
+    min-width: 192px;
+  }
+
+  .content-img_soldout {
+    filter: grayscale(100%);
+  }
+
+  .list-item__right-mob {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .soldout__right {
+    padding-top: 9px;
+  }
+
+  .remainder__icons-mob {
+    padding-right: 4px;
+  }
+
+  .placing {
+    min-width: unset;
+    gap: 12px;
+  }
+
+  .placing__item {
+    padding: 16px 10px 24px 16px;
+  }
+
+  .delivery {
+    gap: 25px;
+  }
+
+  .delivery__method {
+    gap: 8px;
+  }
+
+  .placing__header {
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  .delivery__list {
+    gap: 16px;
+  }
+
+  .delivery__item {
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .delivery__item:last-child {
+    padding-top: 8px;
+  }
+
+  .point__addr {
+    line-height: 22px;
+    font-size: 16px;
+  }
+
+  .delivery__item-goods {
+    padding-top: 9px;
+  }
+
+  .delivery__return {
+    padding-left: 8px;
+    padding-right: 12px;
+  }
+
+  .tooltip-free {
+    width: 283px;
+  }
+
+  .tooltip-free-delivery {
+    left: -228px;
+  }
+
+  .payment__content {
+    gap: 8px;
+  }
+
+  .recepient {
+    padding: 16px 16px 16px 15px;
+    gap: 23px;
+  }
+
+  .recepient__list {
+    gap: 45px;
+    flex-direction: column;
+  }
+
+  .recepient__userdata {
+    max-width: 350px;
+  }
+
+  .recepient__userdata_top {
+    width: unset;
+  }
+
+  .recepient__userdata_bottom {
+    width: unset;
+  }
+
+  .userdata__label-top {
+    font-size: 12px;
+    top: -16px;
+  }
+
+  .userdata__input {
+    line-height: 28px;
+  }
+  .userdata__label-bottom {
+    line-height: 16px;
+    letter-spacing: 0;
+    word-spacing: 0px;
+  }
+
+  .sidebar {
+    background: unset;
+    box-shadow: unset;
+    padding: 10px 16px 16px 16px;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .sidebar__content {
+    gap: 16px;
+    width: 100%;
+  }
+
+  .cost {
+    gap: 7px;
+  }
+
+  .cost-header {
+    font-size: 20px;
+  }
+
+  .cost-header-right {
+    font-size: 20px;
+    letter-spacing: -0.2px;
+  }
+
+  .sidebar-delivery__point {
+    display: none;
+  }
+
+  .sidebar-payment-top {
+    display: none;
+  }
+
+  .sidebar-delivery__return {
+    background: var(--system-smoky-dark-color);
+    border-radius: 8px;
+  }
+
+  .sidebar-payment-bottom {
+    background: var(--system-smoky-dark-color);
+    border-radius: 8px;
+    padding: 6px 8px 12px 8px;
+  }
+
+  .footer-container {
+    padding-bottom: 56px;
+  }
+
+  .tabbar-mob {
+    z-index: 4;
+    display: flex;
+    width: 100%;
+    height: 56px;
+    padding: 0px 13px;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--system-white-color);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    box-shadow: 0px -0.5px 0px 0px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(2.5px);
+  }
+
+  .tabbar__link {
+    padding: 12px 0px;
+    width: 28px;
+  }
+
+  .tabbar__icon {
+    display: block;
+    width: 28px;
+    height: 28px;
+    position: relative;
+  }
+
+  .main-svg {
+    background-image: url(./img/main.svg);
+  }
+
+  .catalog-svg {
+    background-image: url(./img/catalog.svg);
+  }
+
+  .cart-svg {
+    background-image: url(./img/cart-mob.svg);
+  }
+
+  .tabbar__label {
+    position: absolute;
+    border-radius: 16px;
+    background: var(--system-orange-color);
+    color: var(--system-white-color);
+    text-align: center;
+    font-size: 10px;
+    line-height: 16px;
+    bottom: 16px;
+    left: 17px;
+    padding: 0 6px;
+    white-space: nowrap;
+  }
+
+  .favorites-svg {
+    background-image: url(./img/favorites.svg);
+  }
+
+  .profile-svg {
+    background-image: url(./img/profile-mob.svg);
+  }
+
+  .tab-label-courrier {
+    width: unset;
+  }
 }

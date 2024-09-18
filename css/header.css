@@ -1,143 +1,143 @@
 .header__container {
-    display: flex;
-    padding: 16px 20px 16px 24px;
-    align-items: center;
-    gap: 32px;
-    
+  display: flex;
+  padding: 16px 20px 16px 24px;
+  align-items: center;
+  gap: 32px;
 }
 
-.header__catalog-logo{
-    display: flex;
-    width: 170px;
-    align-items: center;
-    gap: 14px;
+.header__catalog-logo {
+  display: flex;
+  width: 170px;
+  align-items: center;
+  gap: 14px;
 }
 
 .catalog-btn {
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.45);
-    padding: 12px 10px;
-    background-position: 50%;
-    width: 48px;
-    height: 48px;
-    background-image: url(/img/burger.svg);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    cursor: pointer;
-    transition: border .3s ease;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.45);
+  padding: 12px 10px;
+  background-position: 50%;
+  width: 48px;
+  height: 48px;
+  background-image: url(./img/burger.svg);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: border 0.3s ease;
 }
 
-.catalog-btn:hover { 
-    border: 1px solid white;
+.catalog-btn:hover {
+  border: 1px solid white;
 }
 
 .header__logo {
-    width: 108px;
-    padding: 2px 1px 7px 2px;
+  width: 108px;
+  padding: 2px 1px 7px 2px;
 }
 
 .logo {
-    width: 108px;
-    color: var(--system-white-color);
-    font-size: 30px;
-    line-height: 24px;
-    font-variant: all-small-caps;
-    margin: 0;
-    letter-spacing: 1.7px;
-    word-spacing: 1.4px;
-    cursor: pointer;
+  width: 108px;
+  color: var(--system-white-color);
+  font-size: 30px;
+  line-height: 24px;
+  font-variant: all-small-caps;
+  margin: 0;
+  letter-spacing: 1.7px;
+  word-spacing: 1.4px;
+  cursor: pointer;
 }
 
 .search {
-    position: relative;
-    width: 100%;
+  position: relative;
+  width: 100%;
 }
 
 .search__input {
-    padding: 14px 50px 16px 20px;
-    border-radius: 36px;
-    border: none;
-    background-color: rgba(255, 255, 255, 0.2);
-    width: 100%;
-    position: relative;
-    transition: background-color .3s ease;
-    color: white;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
+  padding: 14px 50px 16px 20px;
+  border-radius: 36px;
+  border: none;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  position: relative;
+  transition: background-color 0.3s ease;
+  color: white;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
 }
 
-.search__input:hover , .search__input:focus {
-    background-color: rgba(255, 255, 255, 0.4);
-    outline: none;
+.search__input:hover,
+.search__input:focus {
+  background-color: rgba(255, 255, 255, 0.4);
+  outline: none;
 }
 
 .search__input::placeholder {
-    color: var(--system-white-color);
-    opacity: 0.5;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    letter-spacing: 0.2px;
+  color: var(--system-white-color);
+  opacity: 0.5;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: 0.2px;
 }
 
 .search-btn {
-    border: none;
-    background-image: url(/img/search.svg);
-    width: 24px;
-    height: 24px;
-    background-repeat: no-repeat; 
-    background-color: transparent;
-    position: absolute;
-    top: 12px;
-    right: 20px;
-    cursor: pointer;
+  border: none;
+  background-image: url(./img/search.svg);
+  width: 24px;
+  height: 24px;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  position: absolute;
+  top: 12px;
+  right: 20px;
+  cursor: pointer;
 }
 
 .navbar {
-    display: flex;
-    gap: 40px;
+  display: flex;
+  gap: 40px;
 }
 
 .navbar__item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 5px;
-    position: relative;
-    cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  position: relative;
+  cursor: pointer;
 }
 
 .navbar__icon {
-    width: 56px;
-    height: 30px;
-    padding: 0px 15px 0px 15px;
+  width: 56px;
+  height: 30px;
+  padding: 0px 15px 0px 15px;
 }
 
 .navbar__icon_basket {
-    padding-left: 10px; 
+  padding-left: 10px;
 }
 
 .icon__svg {
-    width: 28px;
-    height: 28px; 
+  width: 28px;
+  height: 28px;
 }
 
 .basket-label {
-    position: absolute;
-    border-radius: 16px;
-    background: var(--system-orange-color);
-    color: var(--system-white-color);
-    text-align: center;
-    font-size: 10px;
-    line-height: 15px; 
-    bottom: 40px;
-    left: 32px;
-    padding: 0 5px;
-    white-space: nowrap;
+  position: absolute;
+  border-radius: 16px;
+  background: var(--system-orange-color);
+  color: var(--system-white-color);
+  text-align: center;
+  font-size: 10px;
+  line-height: 15px;
+  bottom: 40px;
+  left: 32px;
+  padding: 0 5px;
+  white-space: nowrap;
 }
 
 .icons-description {
-    color: var(--system-white-color);
-    font-size: 13px;
+  color: var(--system-white-color);
+  font-size: 13px;
 }
